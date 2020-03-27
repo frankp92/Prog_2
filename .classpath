@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="lib" path="build/libs/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="build/libs/DateChooser.jar"/>
+	<classpathentry kind="lib" path="build/libs/JTimeChooser_0.1.0.jar"/>
+	<classpathentry kind="lib" path="build/libs/mssql-jdbc-7.4.1.jre11.jar"/>
+	<classpathentry kind="lib" path="build/libs/mysql-connector-java-5.1.48.jar"/>
+	<classpathentry kind="lib" path="build/libs/mysql-connector-java-8.0.18.jar"/>
+	<classpathentry kind="lib" path="build/libs/rs2xml.jar"/>
+	<classpathentry kind="lib" path="build/libs/Smartlab2.0-1.0.jar"/>
+	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="build/classes/java/main"/>
+</classpath>

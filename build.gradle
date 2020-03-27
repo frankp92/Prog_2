@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'Login_form'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+    mavenCentral()
+}
+
+dependencies {
+    compile files ('C:/Users/vjthe/Documents/Smartlab2.0/build/libs/AbsoluteLayout.jar')
+    compile files ('C:/Users/vjthe/Documents/Smartlab2.0/build/libs/filechooser-1.3.1.jar')
+    compile files ('C:/Users/vjthe/Documents/Smartlab2.0/build/libs/DateChooser.jar')
+    compile files ('C:/Users/vjthe/Documents/Smartlab2.0/build/libs/JTimeChooser_0.1.0.jar')
+    compile files ('C:/Users/vjthe/Documents/Smartlab2.0/build/libs/mssql-jdbc-7.4.1.jre11.jar')
+    compile files ('C:/Users/vjthe/Documents/Smartlab2.0/build/libs/mysql-connector-java-5.1.48.jar')
+    compile files ('C:/Users/vjthe/Documents/Smartlab2.0/build/libs/mysql-connector-java-8.0.18.jar')
+    compile files ('C:/Users/vjthe/Documents/Smartlab2.0/build/libs/rs2xml.jar')
+    compile 'com.google.api-client:google-api-client:1.23.0'
+    compile 'com.google.oauth-client:google-oauth-client-jetty:1.23.0'
+    compile 'com.google.apis:google-api-services-drive:v3-rev110-1.23.0'
+}
