@@ -13,6 +13,7 @@ import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 import com.google.api.services.drive.model.FileList;
+import com.google.api.services.drive.model.Permission;
 import java.io.ByteArrayOutputStream;
 
 import java.io.FileNotFoundException;
@@ -43,7 +44,7 @@ public class GDrive {
      * @throws IOException If the credentials.json file cannot be found.
      */
     
-    private static Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
+    public static Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
         // Load client secrets.
         InputStream in = GDrive.class.getResourceAsStream(CREDENTIALS_FILE_PATH);
         if (in == null) {
@@ -61,16 +62,39 @@ public class GDrive {
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     }
     
-    public void Creazione_cartella(Drive service) throws IOException, GeneralSecurityException{
-            
+    public static void Creazione_cartella(String Nome_cartella) throws IOException, GeneralSecurityException{
+
+        final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+        Drive service = new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
+                .setApplicationName(APPLICATION_NAME)
+                .build();
+        
         File fileMetadata = new File();
-        fileMetadata.setName("Invoices");
+        fileMetadata.setName(Nome_cartella);
         fileMetadata.setMimeType("application/vnd.google-apps.folder");
 
         File file = service.files().create(fileMetadata)
             .setFields("id")
             .execute();
         System.out.println("Folder ID: " + file.getId());
+    }
+    
+    private static Permission insertPermission(Drive service, String fileId, String type, String role) {
+	
+        Permission newPermission = new Permission();
+
+        newPermission.setType(type);
+        newPermission.setRole(role);
+        
+        try {
+            return service.permissions().create(fileId, newPermission)
+                    .execute();
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e);
+        }
+        
+        return null;
+        
     }
     
     public void Upload_file(Drive service) throws IOException, GeneralSecurityException{
@@ -95,7 +119,12 @@ public class GDrive {
             .executeMediaAndDownloadTo(outputStream);
     }
     
-    public void Sposta_file(Drive service) throws IOException, GeneralSecurityException{
+    public void Sposta_file() throws IOException, GeneralSecurityException{
+        
+        final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+        Drive service = new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
+                .setApplicationName(APPLICATION_NAME)
+                .build();
         
         String fileId = "1sTWaJ_j7PkjzaBWtNc3IzovK5hQf21FbOw9yLeeLPNQ";
         String folderId = "0BwwA4oUTeiV1TGRPeTVjaWRDY1E";
@@ -108,6 +137,7 @@ public class GDrive {
           previousParents.append(parent);
           previousParents.append(',');
         }
+        
         // Move the file to the new folder
         file = service.files().update(fileId, null)
             .setAddParents(folderId)

@@ -2,6 +2,10 @@
 Schermata di Login
  */
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Login_form extends javax.swing.JFrame {
@@ -164,8 +168,14 @@ public class Login_form extends javax.swing.JFrame {
             Menu.hidden2.setVisible(false);
             Menu.User.setText(Email);
             Menu.User.setFont(new java.awt.Font("Tahoma", 1, 12));
+            try {
+                GDrive.main(utente);
+            } catch (IOException ex) {
+                Logger.getLogger(Login_form.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (GeneralSecurityException ex) {
+                Logger.getLogger(Login_form.class.getName()).log(Level.SEVERE, null, ex);
+            }
             this.dispose();
-            
         }             
     }//GEN-LAST:event_login_buttonActionPerformed
 

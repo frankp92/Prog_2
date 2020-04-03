@@ -7,7 +7,7 @@ import javax.swing.JFileChooser;
 
 public class Dettagli_St extends javax.swing.JFrame {
 
-    public Dettagli_St(String Titolo) {
+    public Dettagli_St() {
         initComponents();
     }
 
@@ -16,17 +16,16 @@ public class Dettagli_St extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Data = new javax.swing.JLabel();
-        Tipologia = new javax.swing.JLabel();
-        Durata = new javax.swing.JLabel();
-        Posti = new javax.swing.JLabel();
-        Visibilita = new javax.swing.JLabel();
-        Tag = new javax.swing.JLabel();
+        Data_label = new javax.swing.JLabel();
+        Tipologia_label = new javax.swing.JLabel();
+        Durata_label = new javax.swing.JLabel();
+        Posti_label = new javax.swing.JLabel();
+        Visibilita_label = new javax.swing.JLabel();
+        Tag_label = new javax.swing.JLabel();
         ProgressBar = new javax.swing.JProgressBar();
-        Download_button = new javax.swing.JButton();
+        GDrive_button = new javax.swing.JButton();
         Chat_button = new javax.swing.JButton();
         Close_button = new javax.swing.JButton();
-        Upload_button = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Descrizione = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
@@ -36,6 +35,12 @@ public class Dettagli_St extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        Data = new javax.swing.JLabel();
+        Tipologia = new javax.swing.JLabel();
+        Durata = new javax.swing.JLabel();
+        Posti = new javax.swing.JLabel();
+        Privacy = new javax.swing.JLabel();
+        Tag = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
 
@@ -43,27 +48,27 @@ public class Dettagli_St extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        Data.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Data.setText("Data");
+        Data_label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Data_label.setText("Data");
 
-        Tipologia.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Tipologia.setText("Tipologia");
+        Tipologia_label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Tipologia_label.setText("Tag");
 
-        Durata.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Durata.setText("Durata");
+        Durata_label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Durata_label.setText("Durata");
 
-        Posti.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Posti.setText("Posti");
+        Posti_label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Posti_label.setText("Posti");
 
-        Visibilita.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Visibilita.setText("Visibilità");
+        Visibilita_label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Visibilita_label.setText("Visibilità");
 
-        Tag.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Tag.setText("Tag");
+        Tag_label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Tag_label.setText("Tipologia");
 
         ProgressBar.setForeground(new java.awt.Color(255, 153, 51));
 
-        Download_button.setText("Download");
+        GDrive_button.setText("Google Drive");
 
         Chat_button.setText("Chat");
         Chat_button.addActionListener(new java.awt.event.ActionListener() {
@@ -79,15 +84,10 @@ public class Dettagli_St extends javax.swing.JFrame {
             }
         });
 
-        Upload_button.setText("Upload");
-        Upload_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Upload_buttonActionPerformed(evt);
-            }
-        });
-
-        Descrizione.setColumns(20);
+        Descrizione.setColumns(10);
+        Descrizione.setLineWrap(true);
         Descrizione.setRows(5);
+        Descrizione.setWrapStyleWord(true);
         jScrollPane1.setViewportView(Descrizione);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -152,12 +152,12 @@ public class Dettagli_St extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(337, 337, 337)
-                                .addComponent(Titolo, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                                .addComponent(Titolo, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
                                 .addGap(130, 130, 130))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -174,25 +174,49 @@ public class Dettagli_St extends javax.swing.JFrame {
                                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Visibilita)
-                                    .addComponent(Data, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Durata, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(109, 109, 109)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Tipologia)
-                                    .addComponent(Posti)
-                                    .addComponent(Tag)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Close_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Chat_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(Upload_button, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Download_button))))
-                        .addGap(39, 39, 39))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Tipologia_label)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Tag))
+                                    .addComponent(ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(Data_label)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(Data)
+                                                    .addGap(70, 70, 70))
+                                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                                    .addComponent(Visibilita_label)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(Privacy)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(Tag_label)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Tipologia)
+                                                .addGap(76, 76, 76)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(Posti_label)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Posti))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(Durata_label)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(Durata)))))
+                                .addGap(0, 78, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Close_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(Chat_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(GDrive_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(39, 39, 39))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,24 +224,33 @@ public class Dettagli_St extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(Titolo)
-                        .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Titolo)
+                                .addGap(13, 13, 13)
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Durata_label, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(Data_label)
+                                        .addComponent(Data)
+                                        .addComponent(Durata)))
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Data)
-                                    .addComponent(Tipologia))
-                                .addGap(35, 35, 35)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Durata)
+                                    .addComponent(Tipologia)
+                                    .addComponent(Tag_label)
+                                    .addComponent(Posti_label)
                                     .addComponent(Posti))
-                                .addGap(35, 35, 35)
+                                .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Visibilita)
+                                    .addComponent(Visibilita_label)
+                                    .addComponent(Privacy))
+                                .addGap(16, 16, 16)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Tipologia_label)
                                     .addComponent(Tag))
                                 .addGap(41, 41, 41)
                                 .addComponent(ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -232,9 +265,7 @@ public class Dettagli_St extends javax.swing.JFrame {
                                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Download_button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Upload_button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(GDrive_button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Chat_button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -242,7 +273,7 @@ public class Dettagli_St extends javax.swing.JFrame {
                 .addGap(20, 20, 20))
         );
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jPanel1, java.awt.BorderLayout.LINE_END);
 
         jPanel2.setBackground(new java.awt.Color(255, 153, 51));
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 50));
@@ -275,14 +306,6 @@ public class Dettagli_St extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Upload_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Upload_buttonActionPerformed
-
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(null);
-        File f = chooser.getSelectedFile();
-
-    }//GEN-LAST:event_Upload_buttonActionPerformed
 
     private void Chat_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chat_buttonActionPerformed
         // TODO add your handling code here:
@@ -323,7 +346,7 @@ public class Dettagli_St extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dettagli_St(Titolo.getText()).setVisible(true);
+                new Dettagli_St().setVisible(true);
             }
         });
     }
@@ -331,18 +354,23 @@ public class Dettagli_St extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Chat_button;
     private javax.swing.JButton Close_button;
-    private javax.swing.JLabel Data;
-    private javax.swing.JTextArea Descrizione;
-    private javax.swing.JButton Download_button;
-    private javax.swing.JLabel Durata;
-    private javax.swing.JLabel Posti;
+    public static javax.swing.JLabel Data;
+    private javax.swing.JLabel Data_label;
+    public static javax.swing.JTextArea Descrizione;
+    public static javax.swing.JLabel Durata;
+    private javax.swing.JLabel Durata_label;
+    private javax.swing.JButton GDrive_button;
+    public static javax.swing.JLabel Posti;
+    private javax.swing.JLabel Posti_label;
+    public static javax.swing.JLabel Privacy;
     private javax.swing.JProgressBar ProgressBar;
-    private javax.swing.JLabel Tag;
+    public static javax.swing.JLabel Tag;
+    private javax.swing.JLabel Tag_label;
     private javax.swing.JTable Tasks;
-    private javax.swing.JLabel Tipologia;
+    public static javax.swing.JLabel Tipologia;
+    private javax.swing.JLabel Tipologia_label;
     public static javax.swing.JLabel Titolo;
-    private javax.swing.JButton Upload_button;
-    private javax.swing.JLabel Visibilita;
+    private javax.swing.JLabel Visibilita_label;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;

@@ -405,7 +405,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(Prof_Det_Pj_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Refr_Pj_button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
 
         Parent_panel.add(Prog_Card_prof, "card3");
@@ -490,7 +490,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(Stud_Det_Pj_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Refr_Pj_button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         Parent_panel.add(Prog_Card_stud, "card3");
@@ -508,7 +508,7 @@ public class Menu extends javax.swing.JFrame {
         try{
 
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
-            query1 = "SELECT `Titolo`, `Descrizione`, `Data`, `Ora`, `Durata`, `Posti`, `Privacy` FROM `evento`";    
+            query1 = "SELECT evento.Titolo,evento.Descrizione,evento.Data,evento.Ora,evento.Posti,evento.Durata,evento.Privacy,area_tematica.Titolo as Tag FROM evento, tag_e, area_tematica WHERE (evento.IDevento=tag_e.IDevento AND tag_e.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
             EventTab1.setModel(DbUtils.resultSetToTableModel(rs));
@@ -525,7 +525,7 @@ public class Menu extends javax.swing.JFrame {
         try{
 
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
-            query1 = "SELECT `Titolo`, `Descrizione`, `Data`, `Ora`, `Durata`, `Posti`, `Privacy` FROM `evento`";    
+            query1 = "SELECT evento.Titolo,evento.Descrizione,evento.Data,evento.Ora,evento.Posti,evento.Durata,evento.Privacy,area_tematica.Titolo as Tag FROM evento, tag_e, area_tematica WHERE (evento.IDevento=tag_e.IDevento AND tag_e.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
             EventTab2.setModel(DbUtils.resultSetToTableModel(rs));
@@ -542,7 +542,7 @@ public class Menu extends javax.swing.JFrame {
         try{
 
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
-            query1 = "SELECT `Titolo`, `Descrizione`, `Data`, `Tipologia`, `Durata`, `Posti`, `Privacy` FROM `progetto`";    
+            query1 = "SELECT progetto.Titolo,progetto.Descrizione,progetto.Data,progetto.Tipologia,progetto.Posti,progetto.Durata,progetto.Privacy,area_tematica.Titolo as Tag FROM progetto, tag_p, area_tematica WHERE (progetto.IDprogetto=tag_p.IDprogetto AND tag_p.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
             ProgTabl1.setModel(DbUtils.resultSetToTableModel(rs));
@@ -560,7 +560,7 @@ public class Menu extends javax.swing.JFrame {
         try{
 
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
-            query1 = "SELECT `Titolo`, `Descrizione`, `Data`, `Tipologia`, `Durata`, `Posti`, `Privacy` FROM `progetto`";    
+            query1 = "SELECT progetto.Titolo,progetto.Descrizione,progetto.Data,progetto.Tipologia,progetto.Posti,progetto.Durata,progetto.Privacy,area_tematica.Titolo as Tag FROM progetto, tag_p, area_tematica WHERE (progetto.IDprogetto=tag_p.IDprogetto AND tag_p.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
             ProgTabl2.setModel(DbUtils.resultSetToTableModel(rs));
@@ -622,14 +622,37 @@ public class Menu extends javax.swing.JFrame {
     private void Prof_Det_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prof_Det_Pj_buttonActionPerformed
         
         int row;
-        String data;
+        String Titolo;
+        String Descrizione;
+        String Data;
+        String Tipologia;
+        String Durata;
+        String Posti;
+        String Privacy;
+        String Tag;
         
         row = ProgTabl1.getSelectedRow();
         if(row!=-1){
             
-            data = ProgTabl1.getValueAt(row, 0).toString();
-            new Dettagli_St(data).setVisible(true);
-            Dettagli_St.Titolo.setText(data);
+            Titolo = ProgTabl1.getValueAt(row, 0).toString();
+            Descrizione = ProgTabl1.getValueAt(row, 1).toString();
+            Data = ProgTabl1.getValueAt(row, 2).toString();
+            Tipologia = ProgTabl1.getValueAt(row, 3).toString();
+            Durata = ProgTabl1.getValueAt(row, 4).toString();
+            Posti = ProgTabl1.getValueAt(row, 5).toString();
+            Privacy = ProgTabl1.getValueAt(row, 6).toString();
+            Tag = ProgTabl1.getValueAt(row, 7).toString();
+            
+            new Dettagli_St().setVisible(true);
+            
+            Dettagli_St.Titolo.setText(Titolo);
+            Dettagli_St.Descrizione.setText(Descrizione);
+            Dettagli_St.Data.setText(Data);
+            Dettagli_St.Tipologia.setText(Tipologia);
+            Dettagli_St.Durata.setText(Durata);
+            Dettagli_St.Posti.setText(Posti);
+            Dettagli_St.Privacy.setText(Privacy);
+            Dettagli_St.Tag.setText(Tag);
         }
     }//GEN-LAST:event_Prof_Det_Pj_buttonActionPerformed
 
@@ -736,14 +759,37 @@ public class Menu extends javax.swing.JFrame {
     private void Stud_Det_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stud_Det_Pj_buttonActionPerformed
         
         int row;
-        String data;
+        String Titolo;
+        String Descrizione;
+        String Data;
+        String Tipologia;
+        String Durata;
+        String Posti;
+        String Privacy;
+        String Tag;
         
         row = ProgTabl2.getSelectedRow();
         if(row!=-1){
             
-            data = ProgTabl2.getValueAt(row, 0).toString();
-            new Dettagli_St(data).setVisible(true);
-            Dettagli_St.Titolo.setText(data);
+            Titolo = ProgTabl2.getValueAt(row, 0).toString();
+            Descrizione = ProgTabl2.getValueAt(row, 1).toString();
+            Data = ProgTabl2.getValueAt(row, 2).toString();
+            Tipologia = ProgTabl2.getValueAt(row, 3).toString();
+            Durata = ProgTabl2.getValueAt(row, 4).toString();
+            Posti = ProgTabl2.getValueAt(row, 5).toString();
+            Privacy = ProgTabl2.getValueAt(row, 6).toString();
+            Tag = ProgTabl2.getValueAt(row, 7).toString();
+            
+            new Dettagli_St().setVisible(true);
+            
+            Dettagli_St.Titolo.setText(Titolo);
+            Dettagli_St.Descrizione.setText(Descrizione);
+            Dettagli_St.Data.setText(Data);
+            Dettagli_St.Tipologia.setText(Tipologia);
+            Dettagli_St.Durata.setText(Durata);
+            Dettagli_St.Posti.setText(Posti);
+            Dettagli_St.Privacy.setText(Privacy);
+            Dettagli_St.Tag.setText(Tag);
         }
     }//GEN-LAST:event_Stud_Det_Pj_buttonActionPerformed
 

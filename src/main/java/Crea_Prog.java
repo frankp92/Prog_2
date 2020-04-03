@@ -2,6 +2,10 @@
 Codice contenente sia le operazioni di creazione Progetto(I/O, Query al DB) sia l'interfaccia grafica
  */
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
@@ -264,7 +268,7 @@ public class Crea_Prog extends javax.swing.JFrame {
         Boolean Check_EmptyFields;
         
         Titolo = Titolo_Pj.getText();
-        if (!(Pattern.matches("^[a-zA-Z][a-zA-Z0-9-_]{3,32}$", Titolo_Pj.getText()))) {
+        if (!(Pattern.matches("^[ -}]{3,32}$", Titolo_Pj.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire titolo valido", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -322,16 +326,19 @@ public class Crea_Prog extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Compila tutti i campi", "Error", JOptionPane.ERROR_MESSAGE);
             
         }else{
-            if (prv==0){
+            if ((prv==0) || (prv==1)){
                 conn.crea_Progetto(Progetto,Menu.hidden2.getText() );
                 JOptionPane.showMessageDialog(this,"Progetto creato con successo");
-                this.dispose();
-            }else if(prv==1){
-                conn.crea_Progetto(Progetto,Menu.hidden2.getText() );
-                JOptionPane.showMessageDialog(this,"Progetto creato con successo");
+                try {
+                    GDrive.Creazione_cartella(Titolo);
+                } catch (IOException ex) {
+                    Logger.getLogger(Crea_Prog.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (GeneralSecurityException ex) {
+                    Logger.getLogger(Crea_Prog.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 this.dispose();
             }else {
-                JOptionPane.showMessageDialog(this,"Erroe, seleziona Privacy");
+                JOptionPane.showMessageDialog(this,"Errore, seleziona Privacy");
             }
         }
     }//GEN-LAST:event_Crea_buttonActionPerformed

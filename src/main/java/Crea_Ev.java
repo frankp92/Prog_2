@@ -235,7 +235,7 @@ public class Crea_Ev extends javax.swing.JFrame {
         Boolean Check_EmptyFields;
         
         Titolo = Titolo_Ev.getText();
-        if (!(Pattern.matches("^[a-zA-Z][a-zA-Z0-9-_]{3,32}$", Titolo_Ev.getText()))) {
+        if (!(Pattern.matches("^[ -}]{3,32}$", Titolo_Ev.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire titolo valido", "Error", JOptionPane.ERROR_MESSAGE);
             return;
             }
