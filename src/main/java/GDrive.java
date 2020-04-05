@@ -26,6 +26,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class GDrive {
+    
     private static final String APPLICATION_NAME = "Google Drive API Java";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private static final String TOKENS_DIRECTORY_PATH = "tokens";
@@ -62,7 +63,7 @@ public class GDrive {
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     }
     
-    public static void Creazione_cartella(String Nome_cartella) throws IOException, GeneralSecurityException{
+    public static String Creazione_cartella(String Nome_cartella) throws IOException, GeneralSecurityException{
 
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         Drive service = new Drive.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
@@ -77,6 +78,7 @@ public class GDrive {
             .setFields("id")
             .execute();
         System.out.println("Folder ID: " + file.getId());
+        return file.getId();
     }
     
     private static Permission insertPermission(Drive service, String fileId, String type, String role) {
@@ -92,9 +94,7 @@ public class GDrive {
         } catch (IOException e) {
             System.out.println("An error occurred: " + e);
         }
-        
         return null;
-        
     }
     
     public void Upload_file(Drive service) throws IOException, GeneralSecurityException{
@@ -111,7 +111,7 @@ public class GDrive {
         System.out.println("File ID: " + file.getId());
     }
     
-      public void Download_file(Drive service) throws IOException, GeneralSecurityException{
+    public void Download_file(Drive service) throws IOException, GeneralSecurityException{
         
         String fileId = "0BwwA4oUTeiV1UVNwOHItT0xfa2M";
         OutputStream outputStream = new ByteArrayOutputStream();
@@ -146,7 +146,6 @@ public class GDrive {
             .execute();
     }
     
-   
     public static void main(String... args) throws IOException, GeneralSecurityException {
         // Build a new authorized API client service.
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();

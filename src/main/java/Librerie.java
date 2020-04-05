@@ -12,7 +12,10 @@ Sono presenti i seguenti metodi:
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
  
 public class Librerie {
      
@@ -61,7 +64,7 @@ public class Librerie {
         
         return Utente;
     }
-     
+    
     public void register_stud(String Utente[]){
         
         String query1;
@@ -143,6 +146,20 @@ public class Librerie {
         
         }catch(Exception ex){
             System.out.println(ex);
+        }
+    }
+    
+    public void Update_Prog_GDriveFolderID(String FolderID, String Titolo){
+        
+        String query1;
+        
+        try {
+            
+            query1 = "UPDATE `coordinatore` SET `GDriveID`='"+FolderID+"' WHERE `IDprogetto`=(SELECT IDprogetto FROM progetto WHERE Titolo='"+Titolo+"')";
+            stm.executeUpdate(query1);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Librerie.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

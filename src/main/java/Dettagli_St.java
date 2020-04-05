@@ -3,9 +3,20 @@ Scheda Dettagli Progetto
  */
 
 import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import java.awt.Desktop;
+import java.net.URL;
 
 public class Dettagli_St extends javax.swing.JFrame {
+    
+    Connection con = null;
+    Statement stm = null;
+    ResultSet rs = null;
 
     public Dettagli_St() {
         initComponents();
@@ -69,6 +80,11 @@ public class Dettagli_St extends javax.swing.JFrame {
         ProgressBar.setForeground(new java.awt.Color(255, 153, 51));
 
         GDrive_button.setText("Google Drive");
+        GDrive_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GDrive_buttonActionPerformed(evt);
+            }
+        });
 
         Chat_button.setText("Chat");
         Chat_button.addActionListener(new java.awt.event.ActionListener() {
@@ -213,9 +229,8 @@ public class Dettagli_St extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Close_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(Chat_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(GDrive_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(Chat_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(GDrive_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(39, 39, 39))))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -318,6 +333,29 @@ public class Dettagli_St extends javax.swing.JFrame {
     private void Close_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close_buttonActionPerformed
         this.dispose();
     }//GEN-LAST:event_Close_buttonActionPerformed
+
+    private void GDrive_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GDrive_buttonActionPerformed
+        
+        String query1;
+        String GDriveID;
+        Desktop desktop = Desktop.getDesktop();
+        String URLDrive;
+        
+        try{
+
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
+            query1 = "SELECT GDriveID FROM coordinatore WHERE IDprogetto=(SELECT IDprogetto FROM progetto WHERE Titolo='"+Titolo.getText()+"')";    
+            stm = con.prepareStatement(query1);
+            rs = stm.executeQuery(query1);
+            rs.next();
+            GDriveID = rs.getString("GDriveID"); 
+            URLDrive = "https://drive.google.com/open?id="+GDriveID;
+            desktop.browse(new URL(URLDrive).toURI());
+     
+            }catch(Exception ex){
+                System.out.println("Error: "+ex);
+            }
+    }//GEN-LAST:event_GDrive_buttonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

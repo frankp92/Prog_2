@@ -266,6 +266,7 @@ public class Crea_Prog extends javax.swing.JFrame {
         String Privacy;
         String[] Progetto= new String [8];
         Boolean Check_EmptyFields;
+        String FolderID;
         
         Titolo = Titolo_Pj.getText();
         if (!(Pattern.matches("^[ -}]{3,32}$", Titolo_Pj.getText()))) {
@@ -330,7 +331,8 @@ public class Crea_Prog extends javax.swing.JFrame {
                 conn.crea_Progetto(Progetto,Menu.hidden2.getText() );
                 JOptionPane.showMessageDialog(this,"Progetto creato con successo");
                 try {
-                    GDrive.Creazione_cartella(Titolo);
+                    FolderID = GDrive.Creazione_cartella(Titolo);
+                    conn.Update_Prog_GDriveFolderID(FolderID, Titolo);
                 } catch (IOException ex) {
                     Logger.getLogger(Crea_Prog.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (GeneralSecurityException ex) {
