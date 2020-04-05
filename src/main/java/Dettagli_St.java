@@ -11,6 +11,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import java.awt.Desktop;
 import java.net.URL;
+import net.proteanit.sql.DbUtils;
 
 public class Dettagli_St extends javax.swing.JFrame {
     
@@ -26,6 +27,9 @@ public class Dettagli_St extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        IDprogetto_hidden = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Data_label = new javax.swing.JLabel();
         Tipologia_label = new javax.swing.JLabel();
@@ -44,18 +48,52 @@ public class Dettagli_St extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         Tasks = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        CreaTask_Button = new javax.swing.JButton();
+        EliminaTask_Button = new javax.swing.JButton();
         Data = new javax.swing.JLabel();
         Tipologia = new javax.swing.JLabel();
         Durata = new javax.swing.JLabel();
         Posti = new javax.swing.JLabel();
         Privacy = new javax.swing.JLabel();
         Tag = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        AggiornaTask_Button = new javax.swing.JButton();
+        JoinTask_Button = new javax.swing.JButton();
+        CompleteTask_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setUndecorated(true);
+
+        jPanel2.setBackground(new java.awt.Color(255, 153, 51));
+        jPanel2.setPreferredSize(new java.awt.Dimension(400, 50));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Dettagli Progetto");
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel9.setPreferredSize(new java.awt.Dimension(140, 17));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(334, 334, 334)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
+                .addComponent(IDprogetto_hidden)
+                .addGap(31, 31, 31))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IDprogetto_hidden))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -132,7 +170,7 @@ public class Dettagli_St extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -148,14 +186,40 @@ public class Dettagli_St extends javax.swing.JFrame {
         }
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel3.setText("Task");
+        jLabel3.setText("Milestone");
 
-        jButton4.setText("Scegli");
-
-        jButton6.setText("Status");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        CreaTask_Button.setText("Crea");
+        CreaTask_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                CreaTask_ButtonActionPerformed(evt);
+            }
+        });
+
+        EliminaTask_Button.setText("Elimina");
+        EliminaTask_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminaTask_ButtonActionPerformed(evt);
+            }
+        });
+
+        AggiornaTask_Button.setText("Aggiorna");
+        AggiornaTask_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AggiornaTask_ButtonActionPerformed(evt);
+            }
+        });
+
+        JoinTask_Button.setText("Scegli");
+        JoinTask_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JoinTask_ButtonActionPerformed(evt);
+            }
+        });
+
+        CompleteTask_Button.setText("Completa");
+        CompleteTask_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CompleteTask_ButtonActionPerformed(evt);
             }
         });
 
@@ -173,21 +237,28 @@ public class Dettagli_St extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(337, 337, 337)
-                                .addComponent(Titolo, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                                .addComponent(Titolo, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
                                 .addGap(130, 130, 130))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(4, 4, 4)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel1)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(18, 18, 18)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                            .addComponent(AggiornaTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(EliminaTask_Button)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(CreaTask_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addComponent(JoinTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(CompleteTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -224,7 +295,7 @@ public class Dettagli_St extends javax.swing.JFrame {
                                                 .addComponent(Durata_label)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(Durata)))))
-                                .addGap(0, 78, Short.MAX_VALUE))
+                                .addGap(0, 73, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -237,7 +308,7 @@ public class Dettagli_St extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -270,15 +341,23 @@ public class Dettagli_St extends javax.swing.JFrame {
                                 .addGap(41, 41, 41)
                                 .addComponent(ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(JoinTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CompleteTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(CreaTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EliminaTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(AggiornaTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(GDrive_button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -290,45 +369,45 @@ public class Dettagli_St extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.LINE_END);
 
-        jPanel2.setBackground(new java.awt.Color(255, 153, 51));
-        jPanel2.setPreferredSize(new java.awt.Dimension(400, 50));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Dettagli Progetto");
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel9.setPreferredSize(new java.awt.Dimension(140, 17));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(334, 334, 334)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    public void Task(){
+        
+        String query1;
+
+        try{
+
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
+            query1 = "SELECT milestone.Milestone, milestone.Status FROM milestone, task WHERE (task.IDprogetto='"+IDprogetto_hidden.getText()+"' AND task.IDmilestone=milestone.IDmilestone)";    
+            stm=con.prepareStatement(query1);
+            rs = stm.executeQuery(query1);
+            Tasks.setModel(DbUtils.resultSetToTableModel(rs));
+
+        }catch(Exception ex){
+            System.out.println("Error: "+ex);
+        }
+    }
     private void Chat_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chat_buttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Chat_buttonActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void EliminaTask_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaTask_ButtonActionPerformed
+        
+        int row;
+        String Task;
+        Librerie conn;
+        
+        row = Tasks.getSelectedRow();
+        if(row!=-1){
+            
+            Task = Tasks.getValueAt(row, 0).toString();
+            conn = new Librerie();
+            conn.Del_Task(Task, IDprogetto_hidden.getText());
+            Task();
+        }
+    }//GEN-LAST:event_EliminaTask_ButtonActionPerformed
 
     private void Close_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close_buttonActionPerformed
         this.dispose();
@@ -356,6 +435,22 @@ public class Dettagli_St extends javax.swing.JFrame {
                 System.out.println("Error: "+ex);
             }
     }//GEN-LAST:event_GDrive_buttonActionPerformed
+
+    private void AggiornaTask_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AggiornaTask_ButtonActionPerformed
+        Task();
+    }//GEN-LAST:event_AggiornaTask_ButtonActionPerformed
+
+    private void CreaTask_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreaTask_ButtonActionPerformed
+        new Task().setVisible(true);
+    }//GEN-LAST:event_CreaTask_ButtonActionPerformed
+
+    private void JoinTask_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JoinTask_ButtonActionPerformed
+        
+    }//GEN-LAST:event_JoinTask_ButtonActionPerformed
+
+    private void CompleteTask_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompleteTask_ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CompleteTask_ButtonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -390,27 +485,31 @@ public class Dettagli_St extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AggiornaTask_Button;
     private javax.swing.JButton Chat_button;
     private javax.swing.JButton Close_button;
+    public static javax.swing.JButton CompleteTask_Button;
+    public static javax.swing.JButton CreaTask_Button;
     public static javax.swing.JLabel Data;
     private javax.swing.JLabel Data_label;
     public static javax.swing.JTextArea Descrizione;
     public static javax.swing.JLabel Durata;
     private javax.swing.JLabel Durata_label;
+    public static javax.swing.JButton EliminaTask_Button;
     private javax.swing.JButton GDrive_button;
+    public static javax.swing.JLabel IDprogetto_hidden;
+    public static javax.swing.JButton JoinTask_Button;
     public static javax.swing.JLabel Posti;
     private javax.swing.JLabel Posti_label;
     public static javax.swing.JLabel Privacy;
     private javax.swing.JProgressBar ProgressBar;
     public static javax.swing.JLabel Tag;
     private javax.swing.JLabel Tag_label;
-    private javax.swing.JTable Tasks;
+    public static javax.swing.JTable Tasks;
     public static javax.swing.JLabel Tipologia;
     private javax.swing.JLabel Tipologia_label;
     public static javax.swing.JLabel Titolo;
     private javax.swing.JLabel Visibilita_label;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;

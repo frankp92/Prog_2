@@ -622,7 +622,9 @@ public class Menu extends javax.swing.JFrame {
     private void Prof_Det_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prof_Det_Pj_buttonActionPerformed
         
         int row;
+        
         String Titolo;
+        String IDprogetto = null;
         String Descrizione;
         String Data;
         String Tipologia;
@@ -630,8 +632,11 @@ public class Menu extends javax.swing.JFrame {
         String Posti;
         String Privacy;
         String Tag;
+        String query1;
+        String query2;
         
         row = ProgTabl1.getSelectedRow();
+        
         if(row!=-1){
             
             Titolo = ProgTabl1.getValueAt(row, 0).toString();
@@ -643,8 +648,26 @@ public class Menu extends javax.swing.JFrame {
             Privacy = ProgTabl1.getValueAt(row, 6).toString();
             Tag = ProgTabl1.getValueAt(row, 7).toString();
             
+            try{
+
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
+                query1 = "SELECT IDprogetto FROM progetto WHERE titolo ='"+Titolo+"'";    
+                stm = con.prepareStatement(query1);
+                rs = stm.executeQuery(query1);
+                rs.next();
+                IDprogetto = rs.getString("IDprogetto");
+                query2 = "SELECT milestone.Milestone, milestone.Status FROM milestone, task WHERE (task.IDprogetto='"+IDprogetto+"' AND task.IDmilestone=milestone.IDmilestone)";    
+                stm=con.prepareStatement(query2);
+                rs = stm.executeQuery(query2);
+
+            }catch(Exception ex){
+                    System.out.println("Error: "+ex);
+            }
+            
             new Dettagli_St().setVisible(true);
             
+            Dettagli_St.CompleteTask_Button.setVisible(false);
+            Dettagli_St.JoinTask_Button.setVisible(false);
             Dettagli_St.Titolo.setText(Titolo);
             Dettagli_St.Descrizione.setText(Descrizione);
             Dettagli_St.Data.setText(Data);
@@ -653,6 +676,10 @@ public class Menu extends javax.swing.JFrame {
             Dettagli_St.Posti.setText(Posti);
             Dettagli_St.Privacy.setText(Privacy);
             Dettagli_St.Tag.setText(Tag);
+            Dettagli_St.IDprogetto_hidden.setText(IDprogetto);
+            Dettagli_St.IDprogetto_hidden.setVisible(false);
+            Dettagli_St.Tasks.setModel(DbUtils.resultSetToTableModel(rs));
+            
         }
     }//GEN-LAST:event_Prof_Det_Pj_buttonActionPerformed
 
@@ -782,6 +809,8 @@ public class Menu extends javax.swing.JFrame {
             
             new Dettagli_St().setVisible(true);
             
+            Dettagli_St.CreaTask_Button.setVisible(false);
+            Dettagli_St.EliminaTask_Button.setVisible(false);
             Dettagli_St.Titolo.setText(Titolo);
             Dettagli_St.Descrizione.setText(Descrizione);
             Dettagli_St.Data.setText(Data);

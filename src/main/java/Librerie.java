@@ -40,7 +40,7 @@ public class Librerie {
                 
         String query;
         String IDutente;
-        String categoria;
+        String categoria = null;
         String Utente[] = new String[2];
         
         try{            
@@ -61,7 +61,6 @@ public class Librerie {
             System.out.println(ex);
         }
         System.out.println("Login effettuato correttamente");
-        
         return Utente;
     }
     
@@ -157,6 +156,52 @@ public class Librerie {
             
             query1 = "UPDATE `coordinatore` SET `GDriveID`='"+FolderID+"' WHERE `IDprogetto`=(SELECT IDprogetto FROM progetto WHERE Titolo='"+Titolo+"')";
             stm.executeUpdate(query1);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Librerie.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void Add_Task(String Task, String IDprogetto){
+    
+        String query1;
+        String query2;
+        String IDmilestone;
+        String query3;
+            
+        try {
+            
+            query1 = "INSERT INTO milestone (Milestone) VALUES ('"+Task+"')";
+            stm.executeUpdate(query1);
+            query2 = "SELECT IDmilestone FROM milestone WHERE Milestone ='"+Task+"'";
+            rs = stm.executeQuery(query2);
+            rs.next();
+            IDmilestone= rs.getString("IDmilestone");
+            query3 = "INSERT INTO task (IDmilestone, IDprogetto) VALUES('"+IDmilestone+"', '"+IDprogetto+"')";
+            stm.executeUpdate(query3);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Librerie.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void Del_Task(String Task, String IDprogetto){
+    
+        String query1;
+        String query2;
+        String IDmilestone;
+        String query3;
+            
+        try {
+            
+            query1 = "SELECT IDmilestone FROM milestone WHERE Milestone ='"+Task+"'";
+            rs = stm.executeQuery(query1);
+            rs.next();
+            IDmilestone= rs.getString("IDmilestone");
+            query2 = "DELETE FROM task WHERE IDmilestone='"+IDmilestone+"' AND IDprogetto = '"+IDprogetto+"'";
+            stm.executeUpdate(query2);
+            query3 = "DELETE FROM milestone WHERE Milestone = '"+Task+"'";
+            stm.executeUpdate(query3);
             
         } catch (SQLException ex) {
             Logger.getLogger(Librerie.class.getName()).log(Level.SEVERE, null, ex);

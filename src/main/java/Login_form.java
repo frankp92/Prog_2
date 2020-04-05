@@ -162,6 +162,7 @@ public class Login_form extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Login avvenuto con successo");
           
             new Menu().setVisible(true);
+            
             Menu.hidden.setText(utente[1]);
             Menu.hidden.setVisible(false);
             Menu.hidden2.setText(utente[0]);
