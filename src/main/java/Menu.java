@@ -44,32 +44,32 @@ public class Menu extends javax.swing.JFrame {
         User = new javax.swing.JLabel();
         Logout_link = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        hidden = new javax.swing.JLabel();
+        categoria_hidden = new javax.swing.JLabel();
         Parent_panel = new javax.swing.JPanel();
         home = new javax.swing.JPanel();
         Event_Card_prof = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        EventTab1 = new javax.swing.JTable();
+        Event_Tab_prof = new javax.swing.JTable();
         Create_Ev_button = new javax.swing.JButton();
         Del_Ev_button = new javax.swing.JButton();
         Refr_Ev_button1 = new javax.swing.JButton();
         Event_Card_stud = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        EventTab2 = new javax.swing.JTable();
+        Event_Tab_stud = new javax.swing.JTable();
         Part_Ev_button = new javax.swing.JButton();
         NPart_Ev_button = new javax.swing.JButton();
-        hidden2 = new javax.swing.JLabel();
+        IDutente_hidden = new javax.swing.JLabel();
         Refr_Ev_button2 = new javax.swing.JButton();
         Prog_Card_prof = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        ProgTabl1 = new javax.swing.JTable();
+        Prog_Tab_prof = new javax.swing.JTable();
         Create_Pj_button = new javax.swing.JButton();
         Del_Pj_button = new javax.swing.JButton();
         Prof_Det_Pj_button = new javax.swing.JButton();
         Refr_Pj_button1 = new javax.swing.JButton();
         Prog_Card_stud = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        ProgTabl2 = new javax.swing.JTable();
+        Prog_Tab_stud = new javax.swing.JTable();
         Part_Pj_button = new javax.swing.JButton();
         Stud_Det_Pj_button = new javax.swing.JButton();
         NPart_Pj_button = new javax.swing.JButton();
@@ -125,7 +125,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(hidden))
+                        .addComponent(categoria_hidden))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(46, 46, 46)
@@ -141,7 +141,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(hidden)
+                .addComponent(categoria_hidden)
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,7 +174,7 @@ public class Menu extends javax.swing.JFrame {
 
         Event_Card_prof.setBackground(new java.awt.Color(0, 102, 102));
 
-        EventTab1.setModel(new javax.swing.table.DefaultTableModel(
+        Event_Tab_prof.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -197,8 +197,8 @@ public class Menu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        EventTab1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(EventTab1);
+        Event_Tab_prof.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(Event_Tab_prof);
 
         Create_Ev_button.setText("Crea Evento");
         Create_Ev_button.setPreferredSize(new java.awt.Dimension(130, 23));
@@ -254,7 +254,7 @@ public class Menu extends javax.swing.JFrame {
 
         Event_Card_stud.setBackground(new java.awt.Color(0, 102, 102));
 
-        EventTab2.setModel(new javax.swing.table.DefaultTableModel(
+        Event_Tab_stud.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -262,8 +262,8 @@ public class Menu extends javax.swing.JFrame {
 
             }
         ));
-        EventTab2.getTableHeader().setReorderingAllowed(false);
-        jScrollPane4.setViewportView(EventTab2);
+        Event_Tab_stud.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(Event_Tab_stud);
 
         Part_Ev_button.setText("Partecipa");
         Part_Ev_button.setPreferredSize(new java.awt.Dimension(130, 23));
@@ -303,7 +303,7 @@ public class Menu extends javax.swing.JFrame {
                         .addContainerGap(21, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Event_Card_studLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(hidden2)
+                        .addComponent(IDutente_hidden)
                         .addContainerGap())))
         );
         Event_Card_studLayout.setVerticalGroup(
@@ -317,7 +317,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(Refr_Ev_button2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(hidden2)
+                .addComponent(IDutente_hidden)
                 .addContainerGap())
         );
 
@@ -325,7 +325,7 @@ public class Menu extends javax.swing.JFrame {
 
         Prog_Card_prof.setBackground(new java.awt.Color(0, 102, 102));
 
-        ProgTabl1.setModel(new javax.swing.table.DefaultTableModel(
+        Prog_Tab_prof.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -341,7 +341,7 @@ public class Menu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(ProgTabl1);
+        jScrollPane2.setViewportView(Prog_Tab_prof);
 
         Create_Pj_button.setText("Crea Progetto");
         Create_Pj_button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -412,7 +412,7 @@ public class Menu extends javax.swing.JFrame {
 
         Prog_Card_stud.setBackground(new java.awt.Color(0, 102, 102));
 
-        ProgTabl2.setModel(new javax.swing.table.DefaultTableModel(
+        Prog_Tab_stud.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -428,7 +428,7 @@ public class Menu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(ProgTabl2);
+        jScrollPane5.setViewportView(Prog_Tab_stud);
 
         Part_Pj_button.setText("Partecipa");
         Part_Pj_button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -501,7 +501,7 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public void EventTable1(){
+    private void EventTable1(){
         
         String query1;
 
@@ -511,14 +511,14 @@ public class Menu extends javax.swing.JFrame {
             query1 = "SELECT evento.Titolo,evento.Descrizione,evento.Data,evento.Ora,evento.Posti,evento.Durata,evento.Privacy,area_tematica.Titolo as Tag FROM evento, tag_e, area_tematica WHERE (evento.IDevento=tag_e.IDevento AND tag_e.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
-            EventTab1.setModel(DbUtils.resultSetToTableModel(rs));
+            Event_Tab_prof.setModel(DbUtils.resultSetToTableModel(rs));
 
         }catch(Exception ex){
             System.out.println("Error: "+ex);
         }
     }
 
-    public void EventTable2(){
+    private void EventTable2(){
         
         String query1;
 
@@ -528,14 +528,14 @@ public class Menu extends javax.swing.JFrame {
             query1 = "SELECT evento.Titolo,evento.Descrizione,evento.Data,evento.Ora,evento.Posti,evento.Durata,evento.Privacy,area_tematica.Titolo as Tag FROM evento, tag_e, area_tematica WHERE (evento.IDevento=tag_e.IDevento AND tag_e.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
-            EventTab2.setModel(DbUtils.resultSetToTableModel(rs));
+            Event_Tab_stud.setModel(DbUtils.resultSetToTableModel(rs));
 
         }catch(Exception ex){
             System.out.println("Error: "+ex);
         }
     }
 
-    public void ProgTable1(){
+    private void ProgTable1(){
         
         String query1;
 
@@ -545,7 +545,7 @@ public class Menu extends javax.swing.JFrame {
             query1 = "SELECT progetto.Titolo,progetto.Descrizione,progetto.Data,progetto.Tipologia,progetto.Posti,progetto.Durata,progetto.Privacy,area_tematica.Titolo as Tag FROM progetto, tag_p, area_tematica WHERE (progetto.IDprogetto=tag_p.IDprogetto AND tag_p.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
-            ProgTabl1.setModel(DbUtils.resultSetToTableModel(rs));
+            Prog_Tab_prof.setModel(DbUtils.resultSetToTableModel(rs));
 
         }
         catch(Exception ex){
@@ -553,7 +553,7 @@ public class Menu extends javax.swing.JFrame {
         }
     }
 
-    public void ProgTable2(){
+    private void ProgTable2(){
         
         String query1;
 
@@ -563,7 +563,7 @@ public class Menu extends javax.swing.JFrame {
             query1 = "SELECT progetto.Titolo,progetto.Descrizione,progetto.Data,progetto.Tipologia,progetto.Posti,progetto.Durata,progetto.Privacy,area_tematica.Titolo as Tag FROM progetto, tag_p, area_tematica WHERE (progetto.IDprogetto=tag_p.IDprogetto AND tag_p.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
-            ProgTabl2.setModel(DbUtils.resultSetToTableModel(rs));
+            Prog_Tab_stud.setModel(DbUtils.resultSetToTableModel(rs));
 
         }catch(Exception ex){
             System.out.println("Error: "+ex);
@@ -572,7 +572,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void Projects_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Projects_buttonActionPerformed
 
-       if(hidden.getText().equals("professore")){
+       if(categoria_hidden.getText().equals("professore")){
            
             Parent_panel.removeAll();
             Parent_panel.add(Prog_Card_prof);
@@ -591,7 +591,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void Events_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Events_buttonActionPerformed
       
-        if(hidden.getText().equals("professore")){
+        if(categoria_hidden.getText().equals("professore")){
             
             Parent_panel.removeAll();
             Parent_panel.add(Event_Card_prof);
@@ -635,18 +635,18 @@ public class Menu extends javax.swing.JFrame {
         String query1;
         String query2;
         
-        row = ProgTabl1.getSelectedRow();
+        row = Prog_Tab_prof.getSelectedRow();
         
         if(row!=-1){
             
-            Titolo = ProgTabl1.getValueAt(row, 0).toString();
-            Descrizione = ProgTabl1.getValueAt(row, 1).toString();
-            Data = ProgTabl1.getValueAt(row, 2).toString();
-            Tipologia = ProgTabl1.getValueAt(row, 3).toString();
-            Durata = ProgTabl1.getValueAt(row, 4).toString();
-            Posti = ProgTabl1.getValueAt(row, 5).toString();
-            Privacy = ProgTabl1.getValueAt(row, 6).toString();
-            Tag = ProgTabl1.getValueAt(row, 7).toString();
+            Titolo = Prog_Tab_prof.getValueAt(row, 0).toString();
+            Descrizione = Prog_Tab_prof.getValueAt(row, 1).toString();
+            Data = Prog_Tab_prof.getValueAt(row, 2).toString();
+            Tipologia = Prog_Tab_prof.getValueAt(row, 3).toString();
+            Durata = Prog_Tab_prof.getValueAt(row, 4).toString();
+            Posti = Prog_Tab_prof.getValueAt(row, 5).toString();
+            Privacy = Prog_Tab_prof.getValueAt(row, 6).toString();
+            Tag = Prog_Tab_prof.getValueAt(row, 7).toString();
             
             try{
 
@@ -661,7 +661,7 @@ public class Menu extends javax.swing.JFrame {
                 rs = stm.executeQuery(query2);
 
             }catch(Exception ex){
-                    System.out.println("Error: "+ex);
+                System.out.println("Error: "+ex);
             }
             
             new Dettagli_St().setVisible(true);
@@ -694,14 +694,14 @@ public class Menu extends javax.swing.JFrame {
         String query1;
         String IDevento;
         String query_check;
-        Boolean check;
+        Boolean check_partecipazione;
         String query2;
         String query3;
         
-        row = EventTab2.getSelectedRow();
+        row = Event_Tab_stud.getSelectedRow();
         if(row!=-1){
             
-            data = EventTab2.getValueAt(row, 0).toString(); 
+            data = Event_Tab_stud.getValueAt(row, 0).toString(); 
             
             try{
 
@@ -711,20 +711,20 @@ public class Menu extends javax.swing.JFrame {
                 rs = stm.executeQuery(query1);
                 rs.next();
                 IDevento = rs.getString("IDevento");
-                query_check = "SELECT IDevento, IDpartecipante FROM partecipa WHERE IDevento ='"+IDevento+"' AND IDpartecipante ='"+hidden2.getText()+"'";
+                query_check = "SELECT IDevento, IDpartecipante FROM partecipa WHERE IDevento ='"+IDevento+"' AND IDpartecipante ='"+IDutente_hidden.getText()+"'";
                 stm = con.prepareStatement(query_check);
                 rs = stm.executeQuery(query_check);
-                check = rs.next();
+                check_partecipazione = rs.next();
                 
-                if(check!=true){
+                if(check_partecipazione!=true){
                     query2 = "UPDATE evento SET posti = posti-1 WHERE IDevento = '"+IDevento+"'";
                     stm.executeUpdate(query2);
-                    query3 = "INSERT INTO partecipa (IDpartecipante, IDevento) VALUES ('"+hidden2.getText()+"', '"+IDevento+"')";
+                    query3 = "INSERT INTO partecipa (IDpartecipante, IDevento) VALUES ('"+IDutente_hidden.getText()+"', '"+IDevento+"')";
                     stm.executeUpdate(query3);
                     JOptionPane.showMessageDialog(this,"Iscritto con successo");
                     EventTable2();
                 }else{
-                    JOptionPane.showMessageDialog(this,"Gi√† iscritto all'evento");
+                    JOptionPane.showMessageDialog(this,"Gia† iscritto all'evento");
                 }
      
             }catch(Exception ex){
@@ -738,41 +738,82 @@ public class Menu extends javax.swing.JFrame {
     private void Part_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Part_Pj_buttonActionPerformed
         
         int row;
-        String data;
+        String Titolo_prog;
         String query1;
         String IDprogetto;
+        String Tipologia;
         String query_check;
-        Boolean check;
+        Boolean check_partecipazione = null;
         String query2;
         String query3;
         
-        row = ProgTabl2.getSelectedRow();
+        row = Prog_Tab_stud.getSelectedRow();
         if(row!=-1){
             
-            data = ProgTabl2.getValueAt(row, 0).toString(); 
+            Titolo_prog = Prog_Tab_stud.getValueAt(row, 0).toString(); 
             
             try{
 
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
-                query1 = "SELECT IDprogetto FROM progetto WHERE titolo ='"+data+"'";    
+                query1 = "SELECT IDprogetto, Tipologia FROM progetto WHERE titolo ='"+Titolo_prog+"'";    
                 stm = con.prepareStatement(query1);
                 rs = stm.executeQuery(query1);
                 rs.next();
                 IDprogetto = rs.getString("IDprogetto");
-                query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+hidden2.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
-                stm = con.prepareStatement(query_check);
-                rs = stm.executeQuery(query_check);
-                check = rs.next();
+                rs.next();
+                Tipologia = rs.getString("Tipologia");
+                if(Tipologia=="Lavoro"){
                 
-                if(check!=true){
+                    query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                    stm = con.prepareStatement(query_check);
+                    rs = stm.executeQuery(query_check);
+                    check_partecipazione = rs.next();
+                    
+                }else if (Tipologia=="Tesi") {
+                    
+                    query_check = "SELECT IDtesista, IDprogetto FROM tesi WHERE IDtesista ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                    stm = con.prepareStatement(query_check);
+                    rs = stm.executeQuery(query_check);
+                    check_partecipazione = rs.next();
+                    
+                } else if (Tipologia=="Tirocinio") {
+                    
+                    query_check = "SELECT IDtirocinante, IDprogetto FROM tirocinio WHERE IDtirocinante ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                    stm = con.prepareStatement(query_check);
+                    rs = stm.executeQuery(query_check);
+                    check_partecipazione = rs.next();
+                    
+                }
+                
+                if(check_partecipazione!=true){
                     query2 = "UPDATE progetto SET posti = posti-1 WHERE IDprogetto = '"+IDprogetto+"'";
                     stm.executeUpdate(query2);
-                    query3 = "INSERT INTO lavoro (IDlavoratore, IDprogetto) VALUES ('"+hidden2.getText()+"', '"+IDprogetto+"')";
-                    stm.executeUpdate(query3);
-                    JOptionPane.showMessageDialog(this,"Iscritto con successo");
-                    ProgTable2();
+                    
+                    if(Tipologia=="Lavoro"){
+                
+                        query3 = "INSERT INTO lavoro (IDlavoratore, IDprogetto) VALUES ('"+IDutente_hidden.getText()+"', '"+IDprogetto+"')";
+                        stm.executeUpdate(query3);
+                        JOptionPane.showMessageDialog(this,"Iscritto con successo");
+                        ProgTable2();
+                    
+                    }else if (Tipologia=="Tesi") {
+
+                        query3 = "INSERT INTO tesi (IDtesista) VALUES ('"+IDutente_hidden.getText()+"')";
+                        stm.executeUpdate(query3);
+                        JOptionPane.showMessageDialog(this,"Iscritto con successo");
+                        ProgTable2();
+
+                    } else if (Tipologia=="Tirocinio") {
+
+                        query3 = "INSERT INTO tirocinio (IDlavoratore) VALUES ('"+IDutente_hidden.getText()+"')";
+                        stm.executeUpdate(query3);
+                        JOptionPane.showMessageDialog(this,"Iscritto con successo");
+                        ProgTable2();
+
+                    }
+                    
                 }else{
-                    JOptionPane.showMessageDialog(this,"Gi√† iscritto al progetto");
+                    JOptionPane.showMessageDialog(this,"Gia† iscritto al progetto");
                 }
      
             }catch(Exception ex){
@@ -786,6 +827,7 @@ public class Menu extends javax.swing.JFrame {
     private void Stud_Det_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stud_Det_Pj_buttonActionPerformed
         
         int row;
+        
         String Titolo;
         String Descrizione;
         String Data;
@@ -794,20 +836,39 @@ public class Menu extends javax.swing.JFrame {
         String Posti;
         String Privacy;
         String Tag;
+        String query1;
+        String query2;
+        String IDprogetto = null;
         
-        row = ProgTabl2.getSelectedRow();
+        row = Prog_Tab_stud.getSelectedRow();
         if(row!=-1){
             
-            Titolo = ProgTabl2.getValueAt(row, 0).toString();
-            Descrizione = ProgTabl2.getValueAt(row, 1).toString();
-            Data = ProgTabl2.getValueAt(row, 2).toString();
-            Tipologia = ProgTabl2.getValueAt(row, 3).toString();
-            Durata = ProgTabl2.getValueAt(row, 4).toString();
-            Posti = ProgTabl2.getValueAt(row, 5).toString();
-            Privacy = ProgTabl2.getValueAt(row, 6).toString();
-            Tag = ProgTabl2.getValueAt(row, 7).toString();
+            Titolo = Prog_Tab_stud.getValueAt(row, 0).toString();
+            Descrizione = Prog_Tab_stud.getValueAt(row, 1).toString();
+            Data = Prog_Tab_stud.getValueAt(row, 2).toString();
+            Tipologia = Prog_Tab_stud.getValueAt(row, 3).toString();
+            Durata = Prog_Tab_stud.getValueAt(row, 4).toString();
+            Posti = Prog_Tab_stud.getValueAt(row, 5).toString();
+            Privacy = Prog_Tab_stud.getValueAt(row, 6).toString();
+            Tag = Prog_Tab_stud.getValueAt(row, 7).toString();
             
             new Dettagli_St().setVisible(true);
+            
+            try{
+
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
+                query1 = "SELECT IDprogetto FROM progetto WHERE titolo ='"+Titolo+"'";    
+                stm = con.prepareStatement(query1);
+                rs = stm.executeQuery(query1);
+                rs.next();
+                IDprogetto = rs.getString("IDprogetto");
+                query2 = "SELECT m.Milestone, m.Status FROM milestone AS m, task AS t WHERE (t.IDprogetto='"+IDprogetto+"' AND t.IDmilestone=m.IDmilestone)";    
+                stm=con.prepareStatement(query2);
+                rs = stm.executeQuery(query2);
+
+            }catch(Exception ex){
+                    System.out.println("Error: "+ex);
+            }
             
             Dettagli_St.CreaTask_Button.setVisible(false);
             Dettagli_St.EliminaTask_Button.setVisible(false);
@@ -819,6 +880,10 @@ public class Menu extends javax.swing.JFrame {
             Dettagli_St.Posti.setText(Posti);
             Dettagli_St.Privacy.setText(Privacy);
             Dettagli_St.Tag.setText(Tag);
+            Dettagli_St.IDprogetto_hidden.setText(IDprogetto);
+            Dettagli_St.IDprogetto_hidden.setVisible(false);
+            Dettagli_St.Tasks.setModel(DbUtils.resultSetToTableModel(rs));
+            
         }
     }//GEN-LAST:event_Stud_Det_Pj_buttonActionPerformed
 
@@ -836,14 +901,14 @@ public class Menu extends javax.swing.JFrame {
         String query1;
         String IDevento;
         String query_check;
-        Boolean check;
+        Boolean check_partecipazione;
         String query2;
         String query3;
         
-        row = EventTab2.getSelectedRow();
+        row = Event_Tab_stud.getSelectedRow();
         if(row!=-1){
             
-            data = EventTab2.getValueAt(row, 0).toString(); 
+            data = Event_Tab_stud.getValueAt(row, 0).toString(); 
             
             try{
 
@@ -853,20 +918,20 @@ public class Menu extends javax.swing.JFrame {
                 rs = stm.executeQuery(query1);
                 rs.next();
                 IDevento = rs.getString("IDevento");
-                query_check = "SELECT IDevento, IDpartecipante FROM partecipa WHERE IDevento ='"+IDevento+"' AND IDpartecipante ='"+hidden2.getText()+"'";
+                query_check = "SELECT IDevento, IDpartecipante FROM partecipa WHERE IDevento ='"+IDevento+"' AND IDpartecipante ='"+IDutente_hidden.getText()+"'";
                 stm = con.prepareStatement(query_check);
                 rs = stm.executeQuery(query_check);
-                check = rs.next();
+                check_partecipazione = rs.next();
                 
-                if(check!=false){
+                if(check_partecipazione!=false){
                     query2 = "UPDATE evento SET posti = posti+1 WHERE IDevento = '"+IDevento+"'";
                     stm.executeUpdate(query2);
-                    query3 = "DELETE FROM partecipa WHERE IDpartecipante = '"+hidden2.getText()+"' AND IDevento = '"+IDevento+"'";
+                    query3 = "DELETE FROM partecipa WHERE IDpartecipante = '"+IDutente_hidden.getText()+"' AND IDevento = '"+IDevento+"'";
                     stm.executeUpdate(query3);
                     JOptionPane.showMessageDialog(this,"Disiscritto con successo");
                     EventTable2();
                 }else{
-                    JOptionPane.showMessageDialog(this,"Gi√† non partecipi all'evento");
+                    JOptionPane.showMessageDialog(this,"Non partecipi all'evento");
                 }
      
             }catch(Exception ex){
@@ -883,10 +948,10 @@ public class Menu extends javax.swing.JFrame {
         String titolo;
         Librerie conn;
         
-        row = ProgTabl1.getSelectedRow();
+        row = Prog_Tab_prof.getSelectedRow();
         if(row!=-1){
             
-            titolo = ProgTabl1.getValueAt(row, 0).toString();
+            titolo = Prog_Tab_prof.getValueAt(row, 0).toString();
             conn = new Librerie();
             conn.del_Progetto(titolo);
             ProgTable1();
@@ -896,41 +961,84 @@ public class Menu extends javax.swing.JFrame {
     private void NPart_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NPart_Pj_buttonActionPerformed
     
         int row;
-        String data;
+        String Titolo;
+        String Tipologia;
         String query1;
         String IDprogetto;
         String query_check;
-        Boolean check;
+        Boolean check = null;
         String query2;
         String query3;
         
-        row = ProgTabl2.getSelectedRow();
+        row = Prog_Tab_stud.getSelectedRow();
         if(row!=-1){
             
-            data = ProgTabl2.getValueAt(row, 0).toString(); 
+            Titolo = Prog_Tab_stud.getValueAt(row, 0).toString(); 
             
             try{
 
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
-                query1 = "SELECT IDprogetto FROM progetto WHERE titolo ='"+data+"'";    
+                query1 = "SELECT IDprogetto, Tipologia FROM progetto WHERE titolo ='"+Titolo+"'";    
                 stm = con.prepareStatement(query1);
                 rs = stm.executeQuery(query1);
                 rs.next();
                 IDprogetto = rs.getString("IDprogetto");
-                query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+hidden2.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
-                stm = con.prepareStatement(query_check);
-                rs = stm.executeQuery(query_check);
-                check = rs.next();
+                rs.next();
+                Tipologia = rs.getString("Tipologia");
+                
+                if(Tipologia=="Lavoro"){
+                
+                    query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                    stm = con.prepareStatement(query_check);
+                    rs = stm.executeQuery(query_check);
+                    check = rs.next();
+
+                }else if (Tipologia=="Tesi") {
+
+                    query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                    stm = con.prepareStatement(query_check);
+                    rs = stm.executeQuery(query_check);
+                    check = rs.next();
+
+                } else if (Tipologia=="Tirocinio") {
+
+                    query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                    stm = con.prepareStatement(query_check);
+                    rs = stm.executeQuery(query_check);
+                    check = rs.next();
+
+                }
                 
                 if(check!=false){
+                    
                     query2 = "UPDATE progetto SET posti = posti+1 WHERE IDprogetto = '"+IDprogetto+"'";
                     stm.executeUpdate(query2);
-                    query3 = "DELETE FROM lavoro WHERE IDlavoratore = '"+hidden2.getText()+"' AND IDprogetto = '"+IDprogetto+"'";
-                    stm.executeUpdate(query3);
-                    JOptionPane.showMessageDialog(this,"Disiscritto con successo");
-                    ProgTable2();
+                    
+                    if(Tipologia=="Lavoro"){
+                
+                        query3 = "DELETE FROM lavoro WHERE IDlavoratore = '"+IDutente_hidden.getText()+"' AND IDprogetto = '"+IDprogetto+"'";
+                        stm.executeUpdate(query3);
+                        JOptionPane.showMessageDialog(this,"Disiscritto con successo");
+                        ProgTable2();
+
+                    }else if (Tipologia=="Tesi") {
+
+                        query3 = "DELETE FROM tesi WHERE IDtesista = '"+IDutente_hidden.getText()+"' AND IDprogetto = '"+IDprogetto+"'";
+                        stm.executeUpdate(query3);
+                        JOptionPane.showMessageDialog(this,"Disiscritto con successo");
+                        ProgTable2();
+
+                    } else if (Tipologia=="Tirocinio") {
+
+                        query3 = "DELETE FROM tirocinio WHERE IDtirocinante = '"+IDutente_hidden.getText()+"' AND IDprogetto = '"+IDprogetto+"'";
+                        stm.executeUpdate(query3);
+                        JOptionPane.showMessageDialog(this,"Disiscritto con successo");
+                        ProgTable2();
+
+                    }
+                    
                 }else{
-                    JOptionPane.showMessageDialog(this,"Gi√† non partecipi al progetto");
+                    JOptionPane.showMessageDialog(this,"Gia† non partecipi al progetto");
                 }
      
             }catch(Exception ex){
@@ -947,10 +1055,10 @@ public class Menu extends javax.swing.JFrame {
         String titolo;
         Librerie conn;
         
-        row = EventTab1.getSelectedRow();
+        row = Event_Tab_prof.getSelectedRow();
         if(row!=-1){
             
-            titolo = EventTab1.getValueAt(row, 0).toString();
+            titolo = Event_Tab_prof.getValueAt(row, 0).toString();
             conn = new Librerie();
             conn.del_Evento(titolo);
             EventTable1();
@@ -1012,11 +1120,12 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton Create_Pj_button;
     private javax.swing.JButton Del_Ev_button;
     private javax.swing.JButton Del_Pj_button;
-    private javax.swing.JTable EventTab1;
-    private javax.swing.JTable EventTab2;
     private javax.swing.JPanel Event_Card_prof;
     private javax.swing.JPanel Event_Card_stud;
+    private javax.swing.JTable Event_Tab_prof;
+    private javax.swing.JTable Event_Tab_stud;
     private javax.swing.JButton Events_button;
+    public static javax.swing.JLabel IDutente_hidden;
     private javax.swing.JLabel Logout_link;
     javax.swing.JButton NPart_Ev_button;
     private javax.swing.JButton NPart_Pj_button;
@@ -1024,10 +1133,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton Part_Ev_button;
     private javax.swing.JButton Part_Pj_button;
     private javax.swing.JButton Prof_Det_Pj_button;
-    private javax.swing.JTable ProgTabl1;
-    private javax.swing.JTable ProgTabl2;
     private javax.swing.JPanel Prog_Card_prof;
     private javax.swing.JPanel Prog_Card_stud;
+    private javax.swing.JTable Prog_Tab_prof;
+    private javax.swing.JTable Prog_Tab_stud;
     private javax.swing.JButton Projects_button;
     private javax.swing.JButton Refr_Ev_button1;
     javax.swing.JButton Refr_Ev_button2;
@@ -1035,8 +1144,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton Refr_Pj_button2;
     private javax.swing.JButton Stud_Det_Pj_button;
     static javax.swing.JLabel User;
-    public static javax.swing.JLabel hidden;
-    public static javax.swing.JLabel hidden2;
+    public static javax.swing.JLabel categoria_hidden;
     private javax.swing.JPanel home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 public class Login_form extends javax.swing.JFrame {
@@ -149,13 +150,23 @@ public class Login_form extends javax.swing.JFrame {
         String[] utente;
         
         Email = Username.getText();
+        if (!(Pattern.matches("[a-z0-9!#$%&'*+\\=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+\\=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", Username.getText()))) {
+            JOptionPane.showMessageDialog(null, "Inserire email valida", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         Pass = Password.getPassword();
         PWD = String.valueOf(Pass);
+        if (!(Pattern.matches("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$", PWD))) {
+            JOptionPane.showMessageDialog(null, "Inserire password valida minimo 8 caratteri, maiuscole, numeri e caratteri speciali", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         utente = conn.login(Email,PWD);
         
         if((utente[0]==null)||(utente[1]==null)){
             
-            JOptionPane.showMessageDialog(this,"errore");
+            JOptionPane.showMessageDialog(this,"Email o Password sbagliate");
             
         }else{
             
@@ -163,12 +174,13 @@ public class Login_form extends javax.swing.JFrame {
           
             new Menu().setVisible(true);
             
-            Menu.hidden.setText(utente[1]);
-            Menu.hidden.setVisible(false);
-            Menu.hidden2.setText(utente[0]);
-            Menu.hidden2.setVisible(false);
+            Menu.categoria_hidden.setText(utente[1]);
+            Menu.categoria_hidden.setVisible(false);
+            Menu.IDutente_hidden.setText(utente[0]);
+            Menu.IDutente_hidden.setVisible(false);
             Menu.User.setText(Email);
             Menu.User.setFont(new java.awt.Font("Tahoma", 1, 12));
+            
             try {
                 GDrive.main(utente);
             } catch (IOException ex) {
@@ -176,6 +188,7 @@ public class Login_form extends javax.swing.JFrame {
             } catch (GeneralSecurityException ex) {
                 Logger.getLogger(Login_form.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
             this.dispose();
         }             
     }//GEN-LAST:event_login_buttonActionPerformed

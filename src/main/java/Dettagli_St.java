@@ -2,15 +2,13 @@
 Scheda Dettagli Progetto
  */
 
-import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 import java.awt.Desktop;
 import java.net.URL;
+import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
 public class Dettagli_St extends javax.swing.JFrame {
@@ -62,6 +60,7 @@ public class Dettagli_St extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setUndecorated(true);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 153, 51));
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 50));
@@ -79,7 +78,7 @@ public class Dettagli_St extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(334, 334, 334)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 377, Short.MAX_VALUE)
                 .addComponent(IDprogetto_hidden)
                 .addGap(31, 31, 31))
         );
@@ -138,6 +137,7 @@ public class Dettagli_St extends javax.swing.JFrame {
             }
         });
 
+        Descrizione.setEditable(false);
         Descrizione.setColumns(10);
         Descrizione.setLineWrap(true);
         Descrizione.setRows(5);
@@ -217,6 +217,9 @@ public class Dettagli_St extends javax.swing.JFrame {
         });
 
         CompleteTask_Button.setText("Completa");
+        CompleteTask_Button.setMaximumSize(new java.awt.Dimension(72, 23));
+        CompleteTask_Button.setMinimumSize(new java.awt.Dimension(72, 23));
+        CompleteTask_Button.setPreferredSize(new java.awt.Dimension(72, 23));
         CompleteTask_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CompleteTask_ButtonActionPerformed(evt);
@@ -232,77 +235,72 @@ public class Dettagli_St extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(337, 337, 337)
-                                .addComponent(Titolo, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                                .addComponent(Titolo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(130, 130, 130))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel1)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
+                                            .addComponent(JoinTask_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(EliminaTask_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(AggiornaTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(EliminaTask_Button)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(CreaTask_Button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(JoinTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(CompleteTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(CompleteTask_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                                            .addComponent(CreaTask_Button, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)))
+                                    .addComponent(AggiornaTask_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 6, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Tipologia_label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Tag))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(Data_label)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(Data)
+                                            .addGap(70, 70, 70))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(Visibilita_label)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(Privacy)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(Tipologia_label)
+                                        .addComponent(Tag_label)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Tag))
-                                    .addComponent(ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Tipologia)
+                                        .addGap(76, 76, 76)))
+                                .addGap(15, 15, 15)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(Data_label)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(Data)
-                                                    .addGap(70, 70, 70))
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(Visibilita_label)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(Privacy)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(Tag_label)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Tipologia)
-                                                .addGap(76, 76, 76)))
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(Posti_label)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Posti))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(Durata_label)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(Durata)))))
-                                .addGap(0, 73, Short.MAX_VALUE))
+                                        .addComponent(Posti_label)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Posti))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Durata_label)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Durata))))
+                            .addComponent(ProgressBar, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Close_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(Chat_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(GDrive_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(39, 39, 39))))))
+                                    .addComponent(GDrive_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(39, 39, 39))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,12 +316,11 @@ public class Dettagli_St extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Durata_label, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Data_label)
-                                        .addComponent(Data)
-                                        .addComponent(Durata)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Data_label)
+                                    .addComponent(Data)
+                                    .addComponent(Durata)
+                                    .addComponent(Durata_label))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(Tipologia)
@@ -373,7 +370,69 @@ public class Dettagli_St extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public void Task(){
+    private String check_partecipante(String IDutente){
+    
+        String query1;
+        String check_utente;
+        String result_check = null;
+        
+        try{
+
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
+            query1 = "SELECT l.IDlavoratore FROM lavoro AS l WHERE l.IDlavoratore='"+IDprogetto_hidden.getText()+"'";    
+            stm = con.prepareStatement(query1);
+            rs = stm.executeQuery(query1);
+            rs.next();
+            check_utente = rs.getString("IDutente");
+            System.out.println(check_utente);
+            if (check_utente==null){
+                
+                JOptionPane.showMessageDialog(null, "Mi dispiace, non partecipi a questo progetto", "Error", JOptionPane.ERROR_MESSAGE);
+                result_check="non_partecipi";
+                
+            } else{
+                
+                result_check="partecipi";
+                
+            }
+        }catch(Exception ex){
+            System.out.println("Error: "+ex);
+        }
+        return result_check;
+    }
+    
+    private String check_coordinatore(String IDutente){
+    
+        String query1;
+        String check_utente;
+        String result_check = null;
+        
+        try{
+
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
+            query1 = "SELECT IDutente FROM task WHERE IDprogetto='"+IDprogetto_hidden.getText()+"'";    
+            stm = con.prepareStatement(query1);
+            rs = stm.executeQuery(query1);
+            rs.next();
+            check_utente = rs.getString("IDutente");
+            System.out.println(check_utente);
+            if (check_utente==null){
+                
+                JOptionPane.showMessageDialog(null, "Mi dispiace, non partecipi a questo progetto", "Error", JOptionPane.ERROR_MESSAGE);
+                result_check="non_partecipi";
+                
+            } else{
+                
+                result_check="partecipi";
+                
+            }
+        }catch(Exception ex){
+            System.out.println("Error: "+ex);
+        }
+        return result_check;
+    }
+    
+    private void Task(){
         
         String query1;
 
@@ -446,6 +505,51 @@ public class Dettagli_St extends javax.swing.JFrame {
 
     private void JoinTask_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JoinTask_ButtonActionPerformed
         
+        int row;
+        String data;
+        String query1;
+        String IDmilestone;
+        String query_check;
+        Boolean check;
+        String query2;
+        String query3;
+        
+        row = Tasks.getSelectedRow();
+        
+        if(row!=-1){
+            
+            data = Tasks.getValueAt(row, 0).toString(); 
+            
+            try{
+
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
+                query1 = "SELECT IDmilestone FROM milestone WHERE Milestone ='"+data+"'";    
+                stm = con.prepareStatement(query1);
+                rs = stm.executeQuery(query1);
+                rs.next();
+                IDmilestone = rs.getString("IDmilestone");
+                query_check = "SELECT IDmilestone, IDprogetto, IDutente FROM task WHERE IDmilestone ='"+IDmilestone+"' AND IDprogetto='"+IDprogetto_hidden.getText()+"' AND IDutente ='"+Menu.IDutente_hidden.getText()+"'";
+                stm = con.prepareStatement(query_check);
+                rs = stm.executeQuery(query_check);
+                check = rs.next();
+                
+                if(check!=true){
+                    query2 = "UPDATE task SET IDutente ='"+Menu.IDutente_hidden.getText()+"' WHERE IDmilestone ='"+IDmilestone+"' AND IDprogetto='"+IDprogetto_hidden.getText()+"'";
+                    stm.executeUpdate(query2);
+                    query3 = "UPDATE milestone SET Status ='In Progress' WHERE IDmilestone ='"+IDmilestone+"'";
+                    stm.executeUpdate(query3);
+                    JOptionPane.showMessageDialog(this,"Attività iniziata");
+                    Task();
+                }else{
+                    JOptionPane.showMessageDialog(this,"Già presa in carico");
+                }
+     
+            }catch(Exception ex){
+                System.out.println("Error: "+ex);
+            }
+        }else{
+            JOptionPane.showMessageDialog(this,"Seleziona l'evento");
+        }
     }//GEN-LAST:event_JoinTask_ButtonActionPerformed
 
     private void CompleteTask_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompleteTask_ButtonActionPerformed

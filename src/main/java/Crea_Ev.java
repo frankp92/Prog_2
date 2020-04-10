@@ -63,9 +63,9 @@ public class Crea_Ev extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(16, 16, 16)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
@@ -133,7 +133,7 @@ public class Crea_Ev extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +150,7 @@ public class Crea_Ev extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Durata_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Data_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Data_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,7 +163,7 @@ public class Crea_Ev extends javax.swing.JFrame {
                             .addComponent(Titolo_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(20, 20, 20))
+                .addGap(15, 15, 15))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(170, 170, 170)
                 .addComponent(Crea_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,7 +178,7 @@ public class Crea_Ev extends javax.swing.JFrame {
                 .addComponent(Titolo_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -206,7 +206,7 @@ public class Crea_Ev extends javax.swing.JFrame {
                     .addComponent(Tag_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Crea_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -215,14 +215,14 @@ public class Crea_Ev extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Titolo_EvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Titolo_EvActionPerformed
-        
-    }//GEN-LAST:event_Titolo_EvActionPerformed
+    private void Tag_EvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tag_EvActionPerformed
+
+    }//GEN-LAST:event_Tag_EvActionPerformed
 
     private void Crea_EvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crea_EvActionPerformed
-        
+
         Librerie conn = new Librerie();
-        
+
         String Titolo;
         String Descrizione;
         String Data;
@@ -233,17 +233,17 @@ public class Crea_Ev extends javax.swing.JFrame {
         String Privacy;
         String[] Evento= new String [8];
         Boolean Check_EmptyFields;
-        
+
         Titolo = Titolo_Ev.getText();
         if (!(Pattern.matches("^[ -}]{3,32}$", Titolo_Ev.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire titolo valido", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-            }
+        }
         Descrizione = Descrizione_Ev.getText();
         if (!(Pattern.matches("^[ -}]{3,500}$", Descrizione_Ev.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire una descrizione valida(MAX 500 caratteri)", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-        }        
+        }
         Data = Data_Ev.getText();
         Ora = Ora_Ev.getText();
         if (!(Pattern.matches("^(((0|1)[0-9])|2[0-3]):[0-5][0-9]$", Ora_Ev.getText()))) {
@@ -254,12 +254,12 @@ public class Crea_Ev extends javax.swing.JFrame {
         if (!(Pattern.matches("^[0-9]{1,3}$", Durata_Ev.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire durata valida", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-            }
+        }
         Posti = Posti_Ev.getText();
         if (!(Pattern.matches("^[0-9]{1,3}$", Posti_Ev.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire posti validi", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-            }
+        }
         Tag = Tag_Ev.getText();
         if (!(Pattern.matches("^[ -}]{1,24}$", Tag_Ev.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire Tag valido", "Error", JOptionPane.ERROR_MESSAGE);
@@ -270,9 +270,9 @@ public class Crea_Ev extends javax.swing.JFrame {
         if (prv==0){
             Privacy = "Pubblico";
         }else if(prv==1){
-            Privacy = "Privato";            
+            Privacy = "Privato";
         }
-        
+
         Evento[0]=Titolo;
         Evento[1]=Descrizione;
         Evento[2]=Data;
@@ -281,28 +281,24 @@ public class Crea_Ev extends javax.swing.JFrame {
         Evento[5]=Posti;
         Evento[6]=Privacy;
         Evento[7]=Tag;
-        
+
         Check_EmptyFields = (Titolo.isEmpty())|| (Descrizione.isEmpty())|| (Data.isEmpty()) || (Ora.isEmpty()) || (Durata.isEmpty()) || (Posti.isEmpty())|| (Tag.isEmpty()) ;
-        
+
         if(Check_EmptyFields==true){
-            
+
             JOptionPane.showMessageDialog(null, "Compila tutti i campi", "Error", JOptionPane.ERROR_MESSAGE);
-        
+
         }else{
             
-            if (prv==0 || prv==1){
-                conn.crea_Evento(Evento,Menu.hidden2.getText());
-                JOptionPane.showMessageDialog(this,"Evento creato con successo");
-                this.dispose();
-            }else {
-                JOptionPane.showMessageDialog(this,"Erroe, seleziona Privacy");
-            }
+            conn.crea_Evento(Evento,Menu.IDutente_hidden.getText());
+            this.dispose();
+            
         }
     }//GEN-LAST:event_Crea_EvActionPerformed
 
-    private void Tag_EvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tag_EvActionPerformed
+    private void Titolo_EvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Titolo_EvActionPerformed
 
-    }//GEN-LAST:event_Tag_EvActionPerformed
+    }//GEN-LAST:event_Titolo_EvActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

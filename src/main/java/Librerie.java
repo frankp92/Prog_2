@@ -47,20 +47,17 @@ public class Librerie {
             
             query = "SELECT IDutente, categoria FROM utente WHERE (email = '"+email+"' AND password = MD5('"+pass+"'))";
             rs = stm.executeQuery(query);
-                        
-            while(rs.next()){
-                
-                IDutente= rs.getString("IDutente");
-                categoria= rs.getString("categoria");
-                Utente[0]=IDutente;
-                Utente[1]=categoria;
-                
-            }
+            rs.next();
+            IDutente= rs.getString("IDutente");    
+            Utente[0]=IDutente;
+            rs.next();
+            categoria= rs.getString("categoria");    
+            Utente[1]=categoria;
+            System.out.println("Login effettuato correttamente");
             
         }catch(Exception ex){
             System.out.println(ex);
         }
-        System.out.println("Login effettuato correttamente");
         return Utente;
     }
     
@@ -120,6 +117,7 @@ public class Librerie {
         String query4;
         String query5;
         String query6;
+        String query_tipologia;
         String IDprogetto;
         String IDareatematica;
                
@@ -133,6 +131,19 @@ public class Librerie {
             IDprogetto= rs.getString("IDprogetto");
             query3 = "INSERT INTO coordinatore (IDcoordinatore, IDprogetto) VALUES('"+IDds+"', '"+IDprogetto+"')";
             stm.executeUpdate(query3);
+            
+            if (Progetto[3]=="Tesi") {
+                
+                query_tipologia = "INSERT INTO tesi (IDrelatore, IDprogetto) VALUES('"+IDds+"', '"+IDprogetto+"')";
+                stm.executeUpdate(query_tipologia);
+                
+            } else if (Progetto[3]=="Tirocinio") {
+                
+                query_tipologia = "INSERT INTO tirocinio (IDtutor, IDprogetto) VALUES('"+IDds+"', '"+IDprogetto+"')";
+                stm.executeUpdate(query_tipologia);
+                
+            }
+            
             query4 = "INSERT INTO area_tematica (titolo) VALUES('"+Progetto[7]+"')";
             stm.executeUpdate(query4);
             query5 = "SELECT IDareatematica FROM area_tematica WHERE titolo ='"+Progetto[7]+"'";
@@ -216,15 +227,20 @@ public class Librerie {
         String query4;
         String query5;
         String query6;
+        String query_tipologia;
+        String query_task;
         String IDprogetto;
+        String Tipologia;
         String IDareatematica;
         
         try{
             
-            query1 = "SELECT IDprogetto FROM progetto WHERE titolo ='"+titolo+"'";
+            query1 = "SELECT IDprogetto, Tipologia FROM progetto WHERE titolo ='"+titolo+"'";
             rs = stm.executeQuery(query1);
             rs.next();
             IDprogetto= rs.getString("IDprogetto");
+            rs.next();
+            Tipologia= rs.getString("Tipologia");
             query2 = "SELECT IDareatematica FROM tag_p WHERE IDprogetto ='"+IDprogetto+"'";
             rs = stm.executeQuery(query2);
             rs.next();
@@ -234,7 +250,27 @@ public class Librerie {
             query4 = "DELETE FROM area_tematica WHERE IDareatematica = '"+IDareatematica+"'";
             stm.executeUpdate(query4);            
             query5 = "DELETE FROM coordinatore WHERE IDprogetto = '"+IDprogetto+"'";
-            stm.executeUpdate(query5);            
+            stm.executeUpdate(query5);
+            
+            if (Tipologia=="Tesi") {
+                
+                query_tipologia = "DELETE FROM tesi WHERE IDprogetto = '"+IDprogetto+"'";
+                stm.executeUpdate(query_tipologia);
+                
+            } else if (Tipologia=="Tirocinio") {
+                
+                query_tipologia = "DELETE FROM tirocinio WHERE IDprogetto = '"+IDprogetto+"'";
+                stm.executeUpdate(query_tipologia);
+                
+            } else if (Tipologia=="Lavoro") {
+                
+                query_tipologia = "DELETE FROM lavoro WHERE IDprogetto = '"+IDprogetto+"'";
+                stm.executeUpdate(query_tipologia);
+                
+            }
+            
+            query_task = "DELETE FROM task WHERE IDprogetto = '"+IDprogetto+"'";
+            stm.executeUpdate(query_task);
             query6 = "DELETE FROM progetto WHERE IDprogetto = '"+IDprogetto+"'";
             stm.executeUpdate(query6);
             System.out.println("Eliminazione del Progetto: "+titolo+" effettuata correttamente");

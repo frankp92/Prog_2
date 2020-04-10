@@ -1,5 +1,5 @@
 /*
-Codice contenente sia le operazioni di creazione Progetto(I/O, Query al DB) sia l'interfaccia grafica
+Codice contenente sia le operazioni di creazione Evento(I/O, Query al DB) sia l'interfaccia grafica
  */
 
 import java.io.IOException;
@@ -20,7 +20,7 @@ public class Crea_Prog extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         Titolo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -42,35 +42,40 @@ public class Crea_Prog extends javax.swing.JFrame {
         Descrizione_Pj = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Crea Progetto");
+        setBackground(new java.awt.Color(0, 102, 102));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 50));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Creazione Progetto");
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel9.setPreferredSize(new java.awt.Dimension(140, 17));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Creazione Progetto");
+        jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel10.setPreferredSize(new java.awt.Dimension(140, 17));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(126, 126, 126))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
+
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel2.setPreferredSize(new java.awt.Dimension(400, 470));
 
         Titolo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Titolo.setText("Titolo :");
@@ -147,36 +152,37 @@ public class Crea_Prog extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Titolo, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Titolo_Pj, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(Titolo_Pj, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addComponent(Crea_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
-                                    .addComponent(Data_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(75, 75, 75)
+                                    .addComponent(Data_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(70, 70, 70)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel8)
                                     .addComponent(Posti_Pj)
-                                    .addComponent(Tipologia_Pj, 0, 139, Short.MAX_VALUE)
-                                    .addComponent(Tag_Pj)))
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Privacy_Pj, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Durata_Pj, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(Crea_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                                    .addComponent(Tipologia_Pj, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Tag_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel5)
+                            .addComponent(Privacy_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Durata_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +191,7 @@ public class Crea_Prog extends javax.swing.JFrame {
                 .addComponent(Titolo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Titolo_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,9 +209,9 @@ public class Crea_Prog extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Durata_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Posti_Pj))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Durata_Pj)
+                    .addComponent(Posti_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -216,46 +222,27 @@ public class Crea_Prog extends javax.swing.JFrame {
                     .addComponent(Privacy_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Crea_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 404, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 519, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(416, 559));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Titolo_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Titolo_PjActionPerformed
-       
+
     }//GEN-LAST:event_Titolo_PjActionPerformed
 
+    private void Tag_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tag_PjActionPerformed
+
+    }//GEN-LAST:event_Tag_PjActionPerformed
+
     private void Crea_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crea_buttonActionPerformed
-        
+
         Librerie conn = new Librerie();
-        
+
         String Titolo;
         String Descrizione;
         String Data;
@@ -267,7 +254,7 @@ public class Crea_Prog extends javax.swing.JFrame {
         String[] Progetto= new String [8];
         Boolean Check_EmptyFields;
         String FolderID;
-        
+
         Titolo = Titolo_Pj.getText();
         if (!(Pattern.matches("^[ -}]{3,32}$", Titolo_Pj.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire titolo valido", "Error", JOptionPane.ERROR_MESSAGE);
@@ -287,30 +274,30 @@ public class Crea_Prog extends javax.swing.JFrame {
         Tipologia="";
         int tip = Tipologia_Pj.getSelectedIndex();
         if (tip==0){
-             Tipologia = "Lavoro";
+            Tipologia = "Lavoro";
         }else if(tip==1){
-             Tipologia = "Tesi";            
+            Tipologia = "Tesi";
         }else if(tip==2) {
-             Tipologia = "Tirocinio";       
+            Tipologia = "Tirocinio";
         }
         Durata = Durata_Pj.getText();
         if (!(Pattern.matches("^[0-9]{1,3}$", Durata_Pj.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire durata valida", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-            }
+        }
         Posti = Posti_Pj.getText();
         if (!(Pattern.matches("^[0-9]{1,3}$", Posti_Pj.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire posti validi", "Error", JOptionPane.ERROR_MESSAGE);
             return;
-            }
+        }
         Privacy="";
         int prv = Privacy_Pj.getSelectedIndex();
         if (prv==0){
-             Privacy = "Pubblico";
+            Privacy = "Pubblico";
         }else if(prv==1){
-             Privacy = "Privato";            
-        }       
-                
+            Privacy = "Privato";
+        }
+
         Progetto[1]=Titolo;
         Progetto[2]=Descrizione;
         Progetto[0]=Data;
@@ -319,43 +306,36 @@ public class Crea_Prog extends javax.swing.JFrame {
         Progetto[5]=Posti;
         Progetto[6]=Privacy;
         Progetto[7]=Tag;
-        
+
         Check_EmptyFields = (Titolo.isEmpty())|| (Descrizione.isEmpty())|| (Data.isEmpty()) || (Tipologia.isEmpty()) || (Durata.isEmpty()) || (Posti.isEmpty()) || (Privacy.isEmpty())|| (Tag.isEmpty()) ;
-        
+
         if(Check_EmptyFields==true){
-            
+
             JOptionPane.showMessageDialog(null, "Compila tutti i campi", "Error", JOptionPane.ERROR_MESSAGE);
-            
+
         }else{
-            if ((prv==0) || (prv==1)){
-                conn.crea_Progetto(Progetto,Menu.hidden2.getText() );
-                JOptionPane.showMessageDialog(this,"Progetto creato con successo");
-                try {
-                    FolderID = GDrive.Creazione_cartella(Titolo);
-                    conn.Update_Prog_GDriveFolderID(FolderID, Titolo);
-                } catch (IOException ex) {
-                    Logger.getLogger(Crea_Prog.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (GeneralSecurityException ex) {
-                    Logger.getLogger(Crea_Prog.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                this.dispose();
-            }else {
-                JOptionPane.showMessageDialog(this,"Errore, seleziona Privacy");
+            
+            conn.crea_Progetto(Progetto,Menu.IDutente_hidden.getText() );
+            try {
+                FolderID = GDrive.Creazione_cartella(Titolo);
+                conn.Update_Prog_GDriveFolderID(FolderID, Titolo);
+            } catch (IOException ex) {
+                Logger.getLogger(Crea_Prog.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (GeneralSecurityException ex) {
+                Logger.getLogger(Crea_Prog.class.getName()).log(Level.SEVERE, null, ex);
             }
+            this.dispose();
+                
         }
     }//GEN-LAST:event_Crea_buttonActionPerformed
 
-    private void Privacy_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Privacy_PjActionPerformed
-        
-    }//GEN-LAST:event_Privacy_PjActionPerformed
-
     private void Tipologia_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tipologia_PjActionPerformed
-        
+
     }//GEN-LAST:event_Tipologia_PjActionPerformed
 
-    private void Tag_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tag_PjActionPerformed
-       
-    }//GEN-LAST:event_Tag_PjActionPerformed
+    private void Privacy_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Privacy_PjActionPerformed
+
+    }//GEN-LAST:event_Privacy_PjActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -371,13 +351,13 @@ public class Crea_Prog extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Crea_Prog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Crea_Ev.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Crea_Prog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Crea_Ev.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Crea_Prog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Crea_Ev.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Crea_Prog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Crea_Ev.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -399,6 +379,7 @@ public class Crea_Prog extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Tipologia_Pj;
     private javax.swing.JLabel Titolo;
     private javax.swing.JTextField Titolo_Pj;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -406,9 +387,9 @@ public class Crea_Prog extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
+
