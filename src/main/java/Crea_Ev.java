@@ -256,7 +256,7 @@ public class Crea_Ev extends javax.swing.JFrame {
             return;
         }
         Posti = Posti_Ev.getText();
-        if (!(Pattern.matches("^[0-9]{1,3}$", Posti_Ev.getText()))) {
+        if (!(Pattern.matches("^[1-9]{1,3}$", Posti_Ev.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire posti validi", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }

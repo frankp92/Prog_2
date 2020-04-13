@@ -280,13 +280,14 @@ public class Crea_Prog extends javax.swing.JFrame {
         }else if(tip==2) {
             Tipologia = "Tirocinio";
         }
+        System.out.println(Tipologia);
         Durata = Durata_Pj.getText();
         if (!(Pattern.matches("^[0-9]{1,3}$", Durata_Pj.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire durata valida", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         Posti = Posti_Pj.getText();
-        if (!(Pattern.matches("^[0-9]{1,3}$", Posti_Pj.getText()))) {
+        if (!(Pattern.matches("^[1-9]{1,3}$", Posti_Pj.getText()))) {
             JOptionPane.showMessageDialog(null, "Inserire posti validi", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -315,7 +316,7 @@ public class Crea_Prog extends javax.swing.JFrame {
 
         }else{
             
-            conn.crea_Progetto(Progetto,Menu.IDutente_hidden.getText() );
+            conn.crea_Progetto(Progetto, Menu.IDutente_hidden.getText() );
             try {
                 FolderID = GDrive.Creazione_cartella(Titolo);
                 conn.Update_Prog_GDriveFolderID(FolderID, Titolo);

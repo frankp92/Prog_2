@@ -44,36 +44,36 @@ public class Menu extends javax.swing.JFrame {
         User = new javax.swing.JLabel();
         Logout_link = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        IDutente_hidden = new javax.swing.JLabel();
         categoria_hidden = new javax.swing.JLabel();
         Parent_panel = new javax.swing.JPanel();
         home = new javax.swing.JPanel();
-        Event_Card_prof = new javax.swing.JPanel();
+        Prof_Event_Card = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        Event_Tab_prof = new javax.swing.JTable();
-        Create_Ev_button = new javax.swing.JButton();
-        Del_Ev_button = new javax.swing.JButton();
-        Refr_Ev_button1 = new javax.swing.JButton();
-        Event_Card_stud = new javax.swing.JPanel();
+        Prof_Event_Tab = new javax.swing.JTable();
+        Prof_Create_Ev = new javax.swing.JButton();
+        Prof_Del_Ev = new javax.swing.JButton();
+        Prof_Refr_Ev = new javax.swing.JButton();
+        Stud_Event_Card = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        Event_Tab_stud = new javax.swing.JTable();
-        Part_Ev_button = new javax.swing.JButton();
-        NPart_Ev_button = new javax.swing.JButton();
-        IDutente_hidden = new javax.swing.JLabel();
-        Refr_Ev_button2 = new javax.swing.JButton();
-        Prog_Card_prof = new javax.swing.JPanel();
+        Stud_Event_Tab = new javax.swing.JTable();
+        Stud_Part_Ev = new javax.swing.JButton();
+        Stud_NPart_Ev = new javax.swing.JButton();
+        Stud_Refr_Ev = new javax.swing.JButton();
+        Prof_Prog_Card = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Prog_Tab_prof = new javax.swing.JTable();
-        Create_Pj_button = new javax.swing.JButton();
-        Del_Pj_button = new javax.swing.JButton();
-        Prof_Det_Pj_button = new javax.swing.JButton();
-        Refr_Pj_button1 = new javax.swing.JButton();
-        Prog_Card_stud = new javax.swing.JPanel();
+        Prof_Prog_Tab = new javax.swing.JTable();
+        Prof_Create_Pj = new javax.swing.JButton();
+        Prof_Del_Pj = new javax.swing.JButton();
+        Prof_Det_Pj = new javax.swing.JButton();
+        Prof_Refr_Pj = new javax.swing.JButton();
+        Stud_Prog_Card = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        Prog_Tab_stud = new javax.swing.JTable();
-        Part_Pj_button = new javax.swing.JButton();
-        Stud_Det_Pj_button = new javax.swing.JButton();
-        NPart_Pj_button = new javax.swing.JButton();
-        Refr_Pj_button2 = new javax.swing.JButton();
+        Stud_Prog_Tab = new javax.swing.JTable();
+        Stud_Part_Pj = new javax.swing.JButton();
+        Stud_Det_Pj = new javax.swing.JButton();
+        Stud_NPart_Pj = new javax.swing.JButton();
+        Stud_Refr_Pj = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SmartLab");
@@ -137,6 +137,11 @@ public class Menu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                         .addComponent(Logout_link)
                         .addGap(76, 76, 76))))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(409, 409, 409)
+                    .addComponent(IDutente_hidden)
+                    .addContainerGap(409, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,6 +156,11 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(Logout_link))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(50, 50, 50)
+                    .addComponent(IDutente_hidden)
+                    .addContainerGap(50, Short.MAX_VALUE)))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_START);
@@ -172,9 +182,9 @@ public class Menu extends javax.swing.JFrame {
 
         Parent_panel.add(home, "card2");
 
-        Event_Card_prof.setBackground(new java.awt.Color(0, 102, 102));
+        Prof_Event_Card.setBackground(new java.awt.Color(0, 102, 102));
 
-        Event_Tab_prof.setModel(new javax.swing.table.DefaultTableModel(
+        Prof_Event_Tab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -197,64 +207,64 @@ public class Menu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        Event_Tab_prof.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(Event_Tab_prof);
+        Prof_Event_Tab.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(Prof_Event_Tab);
 
-        Create_Ev_button.setText("Crea Evento");
-        Create_Ev_button.setPreferredSize(new java.awt.Dimension(130, 23));
-        Create_Ev_button.addActionListener(new java.awt.event.ActionListener() {
+        Prof_Create_Ev.setText("Crea Evento");
+        Prof_Create_Ev.setPreferredSize(new java.awt.Dimension(130, 23));
+        Prof_Create_Ev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Create_Ev_buttonActionPerformed(evt);
+                Prof_Create_EvActionPerformed(evt);
             }
         });
 
-        Del_Ev_button.setText("Cancella Evento");
-        Del_Ev_button.setPreferredSize(new java.awt.Dimension(110, 23));
-        Del_Ev_button.addActionListener(new java.awt.event.ActionListener() {
+        Prof_Del_Ev.setText("Cancella Evento");
+        Prof_Del_Ev.setPreferredSize(new java.awt.Dimension(110, 23));
+        Prof_Del_Ev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Del_Ev_buttonActionPerformed(evt);
+                Prof_Del_EvActionPerformed(evt);
             }
         });
 
-        Refr_Ev_button1.setText("Aggiorna");
-        Refr_Ev_button1.setPreferredSize(new java.awt.Dimension(110, 23));
-        Refr_Ev_button1.addActionListener(new java.awt.event.ActionListener() {
+        Prof_Refr_Ev.setText("Aggiorna");
+        Prof_Refr_Ev.setPreferredSize(new java.awt.Dimension(110, 23));
+        Prof_Refr_Ev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Refr_Ev_button1ActionPerformed(evt);
+                Prof_Refr_EvActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Event_Card_profLayout = new javax.swing.GroupLayout(Event_Card_prof);
-        Event_Card_prof.setLayout(Event_Card_profLayout);
-        Event_Card_profLayout.setHorizontalGroup(
-            Event_Card_profLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Event_Card_profLayout.createSequentialGroup()
+        javax.swing.GroupLayout Prof_Event_CardLayout = new javax.swing.GroupLayout(Prof_Event_Card);
+        Prof_Event_Card.setLayout(Prof_Event_CardLayout);
+        Prof_Event_CardLayout.setHorizontalGroup(
+            Prof_Event_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Prof_Event_CardLayout.createSequentialGroup()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
-                .addGroup(Event_Card_profLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(Del_Ev_button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Create_Ev_button, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Refr_Ev_button1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(Prof_Event_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Prof_Del_Ev, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Prof_Create_Ev, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Prof_Refr_Ev, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
-        Event_Card_profLayout.setVerticalGroup(
-            Event_Card_profLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Prof_Event_CardLayout.setVerticalGroup(
+            Prof_Event_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
-            .addGroup(Event_Card_profLayout.createSequentialGroup()
+            .addGroup(Prof_Event_CardLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(Create_Ev_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Prof_Create_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Del_Ev_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Prof_Del_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Refr_Ev_button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Prof_Refr_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Parent_panel.add(Event_Card_prof, "card2");
+        Parent_panel.add(Prof_Event_Card, "card2");
 
-        Event_Card_stud.setBackground(new java.awt.Color(0, 102, 102));
+        Stud_Event_Card.setBackground(new java.awt.Color(0, 102, 102));
 
-        Event_Tab_stud.setModel(new javax.swing.table.DefaultTableModel(
+        Stud_Event_Tab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -262,70 +272,62 @@ public class Menu extends javax.swing.JFrame {
 
             }
         ));
-        Event_Tab_stud.getTableHeader().setReorderingAllowed(false);
-        jScrollPane4.setViewportView(Event_Tab_stud);
+        Stud_Event_Tab.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(Stud_Event_Tab);
 
-        Part_Ev_button.setText("Partecipa");
-        Part_Ev_button.setPreferredSize(new java.awt.Dimension(130, 23));
-        Part_Ev_button.addActionListener(new java.awt.event.ActionListener() {
+        Stud_Part_Ev.setText("Partecipa");
+        Stud_Part_Ev.setPreferredSize(new java.awt.Dimension(130, 23));
+        Stud_Part_Ev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Part_Ev_buttonActionPerformed(evt);
+                Stud_Part_EvActionPerformed(evt);
             }
         });
 
-        NPart_Ev_button.setText("Non Partecipa");
-        NPart_Ev_button.addActionListener(new java.awt.event.ActionListener() {
+        Stud_NPart_Ev.setText("Non Partecipa");
+        Stud_NPart_Ev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NPart_Ev_buttonActionPerformed(evt);
+                Stud_NPart_EvActionPerformed(evt);
             }
         });
 
-        Refr_Ev_button2.setText("Aggiorna");
-        Refr_Ev_button2.addActionListener(new java.awt.event.ActionListener() {
+        Stud_Refr_Ev.setText("Aggiorna");
+        Stud_Refr_Ev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Refr_Ev_button2ActionPerformed(evt);
+                Stud_Refr_EvActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Event_Card_studLayout = new javax.swing.GroupLayout(Event_Card_stud);
-        Event_Card_stud.setLayout(Event_Card_studLayout);
-        Event_Card_studLayout.setHorizontalGroup(
-            Event_Card_studLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Event_Card_studLayout.createSequentialGroup()
+        javax.swing.GroupLayout Stud_Event_CardLayout = new javax.swing.GroupLayout(Stud_Event_Card);
+        Stud_Event_Card.setLayout(Stud_Event_CardLayout);
+        Stud_Event_CardLayout.setHorizontalGroup(
+            Stud_Event_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Stud_Event_CardLayout.createSequentialGroup()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(Event_Card_studLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Event_Card_studLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(Event_Card_studLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Part_Ev_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NPart_Ev_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Refr_Ev_button2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(21, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Event_Card_studLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(IDutente_hidden)
-                        .addContainerGap())))
+                .addGap(23, 23, 23)
+                .addGroup(Stud_Event_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Stud_Part_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Stud_NPart_Ev, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Stud_Refr_Ev, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
-        Event_Card_studLayout.setVerticalGroup(
-            Event_Card_studLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Stud_Event_CardLayout.setVerticalGroup(
+            Stud_Event_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
-            .addGroup(Event_Card_studLayout.createSequentialGroup()
+            .addGroup(Stud_Event_CardLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(Part_Ev_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Stud_Part_Ev, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(NPart_Ev_button)
+                .addComponent(Stud_NPart_Ev)
                 .addGap(18, 18, 18)
-                .addComponent(Refr_Ev_button2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(IDutente_hidden)
-                .addContainerGap())
+                .addComponent(Stud_Refr_Ev)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Parent_panel.add(Event_Card_stud, "card2");
+        Parent_panel.add(Stud_Event_Card, "card2");
 
-        Prog_Card_prof.setBackground(new java.awt.Color(0, 102, 102));
+        Prof_Prog_Card.setBackground(new java.awt.Color(0, 102, 102));
 
-        Prog_Tab_prof.setModel(new javax.swing.table.DefaultTableModel(
+        Prof_Prog_Tab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -341,78 +343,78 @@ public class Menu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(Prog_Tab_prof);
+        jScrollPane2.setViewportView(Prof_Prog_Tab);
 
-        Create_Pj_button.setText("Crea Progetto");
-        Create_Pj_button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Create_Pj_button.setPreferredSize(new java.awt.Dimension(130, 23));
-        Create_Pj_button.addActionListener(new java.awt.event.ActionListener() {
+        Prof_Create_Pj.setText("Crea Progetto");
+        Prof_Create_Pj.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Prof_Create_Pj.setPreferredSize(new java.awt.Dimension(130, 23));
+        Prof_Create_Pj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Create_Pj_buttonActionPerformed(evt);
+                Prof_Create_PjActionPerformed(evt);
             }
         });
 
-        Del_Pj_button.setText("Cancella Progetto");
-        Del_Pj_button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Del_Pj_button.setPreferredSize(new java.awt.Dimension(110, 23));
-        Del_Pj_button.addActionListener(new java.awt.event.ActionListener() {
+        Prof_Del_Pj.setText("Cancella Progetto");
+        Prof_Del_Pj.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Prof_Del_Pj.setPreferredSize(new java.awt.Dimension(110, 23));
+        Prof_Del_Pj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Del_Pj_buttonActionPerformed(evt);
+                Prof_Del_PjActionPerformed(evt);
             }
         });
 
-        Prof_Det_Pj_button.setText("Dettagli");
-        Prof_Det_Pj_button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Prof_Det_Pj_button.setPreferredSize(new java.awt.Dimension(110, 23));
-        Prof_Det_Pj_button.addActionListener(new java.awt.event.ActionListener() {
+        Prof_Det_Pj.setText("Dettagli");
+        Prof_Det_Pj.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Prof_Det_Pj.setPreferredSize(new java.awt.Dimension(110, 23));
+        Prof_Det_Pj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Prof_Det_Pj_buttonActionPerformed(evt);
+                Prof_Det_PjActionPerformed(evt);
             }
         });
 
-        Refr_Pj_button1.setText("Aggiorna");
-        Refr_Pj_button1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Refr_Pj_button1.setPreferredSize(new java.awt.Dimension(110, 23));
-        Refr_Pj_button1.addActionListener(new java.awt.event.ActionListener() {
+        Prof_Refr_Pj.setText("Aggiorna");
+        Prof_Refr_Pj.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Prof_Refr_Pj.setPreferredSize(new java.awt.Dimension(110, 23));
+        Prof_Refr_Pj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Refr_Pj_button1ActionPerformed(evt);
+                Prof_Refr_PjActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Prog_Card_profLayout = new javax.swing.GroupLayout(Prog_Card_prof);
-        Prog_Card_prof.setLayout(Prog_Card_profLayout);
-        Prog_Card_profLayout.setHorizontalGroup(
-            Prog_Card_profLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Prog_Card_profLayout.createSequentialGroup()
+        javax.swing.GroupLayout Prof_Prog_CardLayout = new javax.swing.GroupLayout(Prof_Prog_Card);
+        Prof_Prog_Card.setLayout(Prof_Prog_CardLayout);
+        Prof_Prog_CardLayout.setHorizontalGroup(
+            Prof_Prog_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Prof_Prog_CardLayout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
-                .addGroup(Prog_Card_profLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Del_Pj_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Create_Pj_button, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                    .addComponent(Prof_Det_Pj_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Refr_Pj_button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(Prof_Prog_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Prof_Del_Pj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Prof_Create_Pj, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                    .addComponent(Prof_Det_Pj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Prof_Refr_Pj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
-        Prog_Card_profLayout.setVerticalGroup(
-            Prog_Card_profLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Prof_Prog_CardLayout.setVerticalGroup(
+            Prof_Prog_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
-            .addGroup(Prog_Card_profLayout.createSequentialGroup()
+            .addGroup(Prof_Prog_CardLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(Create_Pj_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Prof_Create_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Del_Pj_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Prof_Del_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Prof_Det_Pj_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Prof_Det_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Refr_Pj_button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Prof_Refr_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(165, Short.MAX_VALUE))
         );
 
-        Parent_panel.add(Prog_Card_prof, "card3");
+        Parent_panel.add(Prof_Prog_Card, "card3");
 
-        Prog_Card_stud.setBackground(new java.awt.Color(0, 102, 102));
+        Stud_Prog_Card.setBackground(new java.awt.Color(0, 102, 102));
 
-        Prog_Tab_stud.setModel(new javax.swing.table.DefaultTableModel(
+        Stud_Prog_Tab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -428,72 +430,72 @@ public class Menu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(Prog_Tab_stud);
+        jScrollPane5.setViewportView(Stud_Prog_Tab);
 
-        Part_Pj_button.setText("Partecipa");
-        Part_Pj_button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Part_Pj_button.setPreferredSize(new java.awt.Dimension(130, 23));
-        Part_Pj_button.addActionListener(new java.awt.event.ActionListener() {
+        Stud_Part_Pj.setText("Partecipa");
+        Stud_Part_Pj.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Stud_Part_Pj.setPreferredSize(new java.awt.Dimension(130, 23));
+        Stud_Part_Pj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Part_Pj_buttonActionPerformed(evt);
+                Stud_Part_PjActionPerformed(evt);
             }
         });
 
-        Stud_Det_Pj_button.setText("Dettagli");
-        Stud_Det_Pj_button.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Stud_Det_Pj_button.setPreferredSize(new java.awt.Dimension(110, 23));
-        Stud_Det_Pj_button.addActionListener(new java.awt.event.ActionListener() {
+        Stud_Det_Pj.setText("Dettagli");
+        Stud_Det_Pj.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Stud_Det_Pj.setPreferredSize(new java.awt.Dimension(110, 23));
+        Stud_Det_Pj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Stud_Det_Pj_buttonActionPerformed(evt);
+                Stud_Det_PjActionPerformed(evt);
             }
         });
 
-        NPart_Pj_button.setText("Non Partecipa");
-        NPart_Pj_button.addActionListener(new java.awt.event.ActionListener() {
+        Stud_NPart_Pj.setText("Non Partecipa");
+        Stud_NPart_Pj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NPart_Pj_buttonActionPerformed(evt);
+                Stud_NPart_PjActionPerformed(evt);
             }
         });
 
-        Refr_Pj_button2.setText("Aggiorna");
-        Refr_Pj_button2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Refr_Pj_button2.setPreferredSize(new java.awt.Dimension(110, 23));
-        Refr_Pj_button2.addActionListener(new java.awt.event.ActionListener() {
+        Stud_Refr_Pj.setText("Aggiorna");
+        Stud_Refr_Pj.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Stud_Refr_Pj.setPreferredSize(new java.awt.Dimension(110, 23));
+        Stud_Refr_Pj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Refr_Pj_button2ActionPerformed(evt);
+                Stud_Refr_PjActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout Prog_Card_studLayout = new javax.swing.GroupLayout(Prog_Card_stud);
-        Prog_Card_stud.setLayout(Prog_Card_studLayout);
-        Prog_Card_studLayout.setHorizontalGroup(
-            Prog_Card_studLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Prog_Card_studLayout.createSequentialGroup()
+        javax.swing.GroupLayout Stud_Prog_CardLayout = new javax.swing.GroupLayout(Stud_Prog_Card);
+        Stud_Prog_Card.setLayout(Stud_Prog_CardLayout);
+        Stud_Prog_CardLayout.setHorizontalGroup(
+            Stud_Prog_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Stud_Prog_CardLayout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
-                .addGroup(Prog_Card_studLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Part_Pj_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Stud_Det_Pj_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(NPart_Pj_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Refr_Pj_button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(Stud_Prog_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Stud_Part_Pj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Stud_Det_Pj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Stud_NPart_Pj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Stud_Refr_Pj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
-        Prog_Card_studLayout.setVerticalGroup(
-            Prog_Card_studLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Stud_Prog_CardLayout.setVerticalGroup(
+            Stud_Prog_CardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
-            .addGroup(Prog_Card_studLayout.createSequentialGroup()
+            .addGroup(Stud_Prog_CardLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(Part_Pj_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Stud_Part_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(NPart_Pj_button)
+                .addComponent(Stud_NPart_Pj)
                 .addGap(18, 18, 18)
-                .addComponent(Stud_Det_Pj_button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Stud_Det_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Refr_Pj_button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Stud_Refr_Pj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(160, Short.MAX_VALUE))
         );
 
-        Parent_panel.add(Prog_Card_stud, "card3");
+        Parent_panel.add(Stud_Prog_Card, "card3");
 
         getContentPane().add(Parent_panel, java.awt.BorderLayout.CENTER);
 
@@ -511,7 +513,7 @@ public class Menu extends javax.swing.JFrame {
             query1 = "SELECT evento.Titolo,evento.Descrizione,evento.Data,evento.Ora,evento.Posti,evento.Durata,evento.Privacy,area_tematica.Titolo as Tag FROM evento, tag_e, area_tematica WHERE (evento.IDevento=tag_e.IDevento AND tag_e.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
-            Event_Tab_prof.setModel(DbUtils.resultSetToTableModel(rs));
+            Prof_Event_Tab.setModel(DbUtils.resultSetToTableModel(rs));
 
         }catch(Exception ex){
             System.out.println("Error: "+ex);
@@ -528,7 +530,7 @@ public class Menu extends javax.swing.JFrame {
             query1 = "SELECT evento.Titolo,evento.Descrizione,evento.Data,evento.Ora,evento.Posti,evento.Durata,evento.Privacy,area_tematica.Titolo as Tag FROM evento, tag_e, area_tematica WHERE (evento.IDevento=tag_e.IDevento AND tag_e.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
-            Event_Tab_stud.setModel(DbUtils.resultSetToTableModel(rs));
+            Stud_Event_Tab.setModel(DbUtils.resultSetToTableModel(rs));
 
         }catch(Exception ex){
             System.out.println("Error: "+ex);
@@ -545,7 +547,7 @@ public class Menu extends javax.swing.JFrame {
             query1 = "SELECT progetto.Titolo,progetto.Descrizione,progetto.Data,progetto.Tipologia,progetto.Posti,progetto.Durata,progetto.Privacy,area_tematica.Titolo as Tag FROM progetto, tag_p, area_tematica WHERE (progetto.IDprogetto=tag_p.IDprogetto AND tag_p.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
-            Prog_Tab_prof.setModel(DbUtils.resultSetToTableModel(rs));
+            Prof_Prog_Tab.setModel(DbUtils.resultSetToTableModel(rs));
 
         }
         catch(Exception ex){
@@ -563,7 +565,7 @@ public class Menu extends javax.swing.JFrame {
             query1 = "SELECT progetto.Titolo,progetto.Descrizione,progetto.Data,progetto.Tipologia,progetto.Posti,progetto.Durata,progetto.Privacy,area_tematica.Titolo as Tag FROM progetto, tag_p, area_tematica WHERE (progetto.IDprogetto=tag_p.IDprogetto AND tag_p.IDareatematica=area_tematica.IDareatematica)";    
             stm=con.prepareStatement(query1);
             rs = stm.executeQuery(query1);
-            Prog_Tab_stud.setModel(DbUtils.resultSetToTableModel(rs));
+            Stud_Prog_Tab.setModel(DbUtils.resultSetToTableModel(rs));
 
         }catch(Exception ex){
             System.out.println("Error: "+ex);
@@ -575,14 +577,14 @@ public class Menu extends javax.swing.JFrame {
        if(categoria_hidden.getText().equals("professore")){
            
             Parent_panel.removeAll();
-            Parent_panel.add(Prog_Card_prof);
+            Parent_panel.add(Prof_Prog_Card);
             Parent_panel.repaint();
             Parent_panel.revalidate();
 
         }else{
            
             Parent_panel.removeAll();
-            Parent_panel.add(Prog_Card_stud);
+            Parent_panel.add(Stud_Prog_Card);
             Parent_panel.repaint();
             Parent_panel.revalidate();
 
@@ -594,23 +596,23 @@ public class Menu extends javax.swing.JFrame {
         if(categoria_hidden.getText().equals("professore")){
             
             Parent_panel.removeAll();
-            Parent_panel.add(Event_Card_prof);
+            Parent_panel.add(Prof_Event_Card);
             Parent_panel.repaint();
             Parent_panel.revalidate();
 
         }else{
             
             Parent_panel.removeAll();
-            Parent_panel.add(Event_Card_stud);
+            Parent_panel.add(Stud_Event_Card);
             Parent_panel.repaint();
             Parent_panel.revalidate();
 
         }
     }//GEN-LAST:event_Events_buttonActionPerformed
 
-    private void Create_Ev_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Create_Ev_buttonActionPerformed
+    private void Prof_Create_EvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prof_Create_EvActionPerformed
         new Crea_Ev().setVisible(true);
-           }//GEN-LAST:event_Create_Ev_buttonActionPerformed
+           }//GEN-LAST:event_Prof_Create_EvActionPerformed
 
     private void Logout_linkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logout_linkMouseClicked
         
@@ -619,7 +621,7 @@ public class Menu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Logout_linkMouseClicked
 
-    private void Prof_Det_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prof_Det_Pj_buttonActionPerformed
+    private void Prof_Det_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prof_Det_PjActionPerformed
         
         int row;
         
@@ -635,18 +637,18 @@ public class Menu extends javax.swing.JFrame {
         String query1;
         String query2;
         
-        row = Prog_Tab_prof.getSelectedRow();
+        row = Prof_Prog_Tab.getSelectedRow();
         
         if(row!=-1){
             
-            Titolo = Prog_Tab_prof.getValueAt(row, 0).toString();
-            Descrizione = Prog_Tab_prof.getValueAt(row, 1).toString();
-            Data = Prog_Tab_prof.getValueAt(row, 2).toString();
-            Tipologia = Prog_Tab_prof.getValueAt(row, 3).toString();
-            Durata = Prog_Tab_prof.getValueAt(row, 4).toString();
-            Posti = Prog_Tab_prof.getValueAt(row, 5).toString();
-            Privacy = Prog_Tab_prof.getValueAt(row, 6).toString();
-            Tag = Prog_Tab_prof.getValueAt(row, 7).toString();
+            Titolo = Prof_Prog_Tab.getValueAt(row, 0).toString();
+            Descrizione = Prof_Prog_Tab.getValueAt(row, 1).toString();
+            Data = Prof_Prog_Tab.getValueAt(row, 2).toString();
+            Tipologia = Prof_Prog_Tab.getValueAt(row, 3).toString();
+            Posti = Prof_Prog_Tab.getValueAt(row, 4).toString();
+            Durata = Prof_Prog_Tab.getValueAt(row, 5).toString();
+            Privacy = Prof_Prog_Tab.getValueAt(row, 6).toString();
+            Tag = Prof_Prog_Tab.getValueAt(row, 7).toString();
             
             try{
 
@@ -680,151 +682,167 @@ public class Menu extends javax.swing.JFrame {
             Dettagli_St.IDprogetto_hidden.setVisible(false);
             Dettagli_St.Tasks.setModel(DbUtils.resultSetToTableModel(rs));
             
-        }
-    }//GEN-LAST:event_Prof_Det_Pj_buttonActionPerformed
+        }else{JOptionPane.showMessageDialog(this,"Seleziona il progetto");}
+    }//GEN-LAST:event_Prof_Det_PjActionPerformed
 
-    private void Create_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Create_Pj_buttonActionPerformed
+    private void Prof_Create_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prof_Create_PjActionPerformed
         new Crea_Prog().setVisible(true);
-    }//GEN-LAST:event_Create_Pj_buttonActionPerformed
+    }//GEN-LAST:event_Prof_Create_PjActionPerformed
 
-    private void Part_Ev_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Part_Ev_buttonActionPerformed
+    private void Stud_Part_EvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stud_Part_EvActionPerformed
         
         int row;
-        String data;
-        String query1;
+        String Posti;
+        String Titolo;
+        String query_IDevento;
         String IDevento;
         String query_check;
         Boolean check_partecipazione;
-        String query2;
-        String query3;
+        String update_Posti;
+        String query_partecipazione;
         
-        row = Event_Tab_stud.getSelectedRow();
+        row = Stud_Event_Tab.getSelectedRow();
         if(row!=-1){
             
-            data = Event_Tab_stud.getValueAt(row, 0).toString(); 
-            
-            try{
-
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
-                query1 = "SELECT IDevento FROM evento WHERE titolo ='"+data+"'";    
-                stm = con.prepareStatement(query1);
-                rs = stm.executeQuery(query1);
-                rs.next();
-                IDevento = rs.getString("IDevento");
-                query_check = "SELECT IDevento, IDpartecipante FROM partecipa WHERE IDevento ='"+IDevento+"' AND IDpartecipante ='"+IDutente_hidden.getText()+"'";
-                stm = con.prepareStatement(query_check);
-                rs = stm.executeQuery(query_check);
-                check_partecipazione = rs.next();
+            Posti = Stud_Event_Tab.getValueAt(row, 4).toString();
+            if (Posti=="0") {
                 
-                if(check_partecipazione!=true){
-                    query2 = "UPDATE evento SET posti = posti-1 WHERE IDevento = '"+IDevento+"'";
-                    stm.executeUpdate(query2);
-                    query3 = "INSERT INTO partecipa (IDpartecipante, IDevento) VALUES ('"+IDutente_hidden.getText()+"', '"+IDevento+"')";
-                    stm.executeUpdate(query3);
-                    JOptionPane.showMessageDialog(this,"Iscritto con successo");
-                    EventTable2();
-                }else{
-                    JOptionPane.showMessageDialog(this,"Gia  iscritto all'evento");
-                }
-     
-            }catch(Exception ex){
-                System.out.println("Error: "+ex);
+                JOptionPane.showMessageDialog(this,"Posti esauriti");
+                
+            }else{
+            
+               Titolo = Stud_Event_Tab.getValueAt(row, 0).toString(); 
+            
+                try{
+
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
+                    query_IDevento = "SELECT IDevento FROM evento WHERE titolo ='"+Titolo+"'";    
+                    stm = con.prepareStatement(query_IDevento);
+                    rs = stm.executeQuery(query_IDevento);
+                    rs.next();
+                    IDevento = rs.getString("IDevento");
+                    query_check = "SELECT IDevento, IDpartecipante FROM partecipa WHERE IDevento ='"+IDevento+"' AND IDpartecipante ='"+IDutente_hidden.getText()+"'";
+                    stm = con.prepareStatement(query_check);
+                    rs = stm.executeQuery(query_check);
+                    check_partecipazione = rs.next();
+
+                    if(check_partecipazione!=true){
+                        update_Posti = "UPDATE evento SET posti = posti-1 WHERE IDevento = '"+IDevento+"'";
+                        stm.executeUpdate(update_Posti);
+                        query_partecipazione = "INSERT INTO partecipa (IDpartecipante, IDevento) VALUES ('"+IDutente_hidden.getText()+"', '"+IDevento+"')";
+                        stm.executeUpdate(query_partecipazione);
+                        JOptionPane.showMessageDialog(this,"Iscritto con successo");
+                        EventTable2();
+                    }else{
+                        JOptionPane.showMessageDialog(this,"Gia  iscritto all'evento");
+                    }
+                }catch(Exception ex){
+                    System.out.println("Error: "+ex);
+                } 
             }
         }else{
             JOptionPane.showMessageDialog(this,"Seleziona l'evento");
         }
-    }//GEN-LAST:event_Part_Ev_buttonActionPerformed
+    }//GEN-LAST:event_Stud_Part_EvActionPerformed
 
-    private void Part_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Part_Pj_buttonActionPerformed
+    private void Stud_Part_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stud_Part_PjActionPerformed
         
         int row;
+        String Posti;
         String Titolo_prog;
-        String query1;
+        String query_infoProgetto;
         String IDprogetto;
         String Tipologia;
         String query_check;
         Boolean check_partecipazione = null;
-        String query2;
-        String query3;
+        String query_checkPartecipazione;
+        String query_partecipazione;
         
-        row = Prog_Tab_stud.getSelectedRow();
+        row = Stud_Prog_Tab.getSelectedRow();
         if(row!=-1){
             
-            Titolo_prog = Prog_Tab_stud.getValueAt(row, 0).toString(); 
+            Posti = Stud_Prog_Tab.getValueAt(row, 4).toString();
+            if (Posti=="0") {
+                
+                JOptionPane.showMessageDialog(this,"Posti esauriti");
+                
+            }else{
             
-            try{
+                Titolo_prog = Stud_Prog_Tab.getValueAt(row, 0).toString(); 
+            
+                try{
 
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
-                query1 = "SELECT IDprogetto, Tipologia FROM progetto WHERE titolo ='"+Titolo_prog+"'";    
-                stm = con.prepareStatement(query1);
-                rs = stm.executeQuery(query1);
-                rs.next();
-                IDprogetto = rs.getString("IDprogetto");
-                rs.next();
-                Tipologia = rs.getString("Tipologia");
-                if(Tipologia=="Lavoro"){
-                
-                    query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
-                    stm = con.prepareStatement(query_check);
-                    rs = stm.executeQuery(query_check);
-                    check_partecipazione = rs.next();
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
+                    query_infoProgetto = "SELECT IDprogetto, Tipologia FROM progetto WHERE titolo ='"+Titolo_prog+"'";    
+                    stm = con.prepareStatement(query_infoProgetto);
+                    rs = stm.executeQuery(query_infoProgetto);
+                    rs.next();
+                    IDprogetto = rs.getString("IDprogetto");
+                    Tipologia = rs.getString("Tipologia");
                     
-                }else if (Tipologia=="Tesi") {
-                    
-                    query_check = "SELECT IDtesista, IDprogetto FROM tesi WHERE IDtesista ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
-                    stm = con.prepareStatement(query_check);
-                    rs = stm.executeQuery(query_check);
-                    check_partecipazione = rs.next();
-                    
-                } else if (Tipologia=="Tirocinio") {
-                    
-                    query_check = "SELECT IDtirocinante, IDprogetto FROM tirocinio WHERE IDtirocinante ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
-                    stm = con.prepareStatement(query_check);
-                    rs = stm.executeQuery(query_check);
-                    check_partecipazione = rs.next();
-                    
-                }
-                
-                if(check_partecipazione!=true){
-                    query2 = "UPDATE progetto SET posti = posti-1 WHERE IDprogetto = '"+IDprogetto+"'";
-                    stm.executeUpdate(query2);
-                    
-                    if(Tipologia=="Lavoro"){
-                
-                        query3 = "INSERT INTO lavoro (IDlavoratore, IDprogetto) VALUES ('"+IDutente_hidden.getText()+"', '"+IDprogetto+"')";
-                        stm.executeUpdate(query3);
-                        JOptionPane.showMessageDialog(this,"Iscritto con successo");
-                        ProgTable2();
-                    
-                    }else if (Tipologia=="Tesi") {
+                    if(Tipologia.equals("Lavoro")){
 
-                        query3 = "INSERT INTO tesi (IDtesista) VALUES ('"+IDutente_hidden.getText()+"')";
-                        stm.executeUpdate(query3);
-                        JOptionPane.showMessageDialog(this,"Iscritto con successo");
-                        ProgTable2();
+                        query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                        stm = con.prepareStatement(query_check);
+                        rs = stm.executeQuery(query_check);
+                        check_partecipazione = rs.next();
 
-                    } else if (Tipologia=="Tirocinio") {
+                    }else if (Tipologia.equals("Tesi")) {
 
-                        query3 = "INSERT INTO tirocinio (IDlavoratore) VALUES ('"+IDutente_hidden.getText()+"')";
-                        stm.executeUpdate(query3);
-                        JOptionPane.showMessageDialog(this,"Iscritto con successo");
-                        ProgTable2();
+                        query_check = "SELECT IDtesista, IDprogetto FROM tesi WHERE IDtesista ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                        stm = con.prepareStatement(query_check);
+                        rs = stm.executeQuery(query_check);
+                        check_partecipazione = rs.next();
+
+                    } else if (Tipologia.equals("Tirocinio")) {
+
+                        query_check = "SELECT IDtirocinante, IDprogetto FROM tirocinio WHERE IDtirocinante ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                        stm = con.prepareStatement(query_check);
+                        rs = stm.executeQuery(query_check);
+                        check_partecipazione = rs.next();
 
                     }
-                    
-                }else{
-                    JOptionPane.showMessageDialog(this,"Gia  iscritto al progetto");
+
+                    if(check_partecipazione!=true){
+                        
+                        query_checkPartecipazione = "UPDATE progetto SET posti = posti-1 WHERE IDprogetto = '"+IDprogetto+"'";
+                        stm.executeUpdate(query_checkPartecipazione);
+
+                        if(Tipologia.equals("Lavoro")){
+
+                            query_partecipazione = "INSERT INTO lavoro (IDlavoratore, IDprogetto) VALUES ('"+IDutente_hidden.getText()+"', '"+IDprogetto+"')";
+                            stm.executeUpdate(query_partecipazione);
+                            JOptionPane.showMessageDialog(this,"Iscritto con successo");
+                            ProgTable2();
+
+                        }else if (Tipologia.equals("Tesi")) {
+
+                            query_partecipazione = "INSERT INTO tesi (IDtesista, IDprogetto) VALUES ('"+IDutente_hidden.getText()+"', '"+IDprogetto+"')";
+                            stm.executeUpdate(query_partecipazione);
+                            JOptionPane.showMessageDialog(this,"Iscritto con successo");
+                            ProgTable2();
+
+                        } else if (Tipologia.equals("Tirocinio")) {
+
+                            query_partecipazione = "INSERT INTO tirocinio (IDtirocinante, IDprogetto) VALUES ('"+IDutente_hidden.getText()+"', '"+IDprogetto+"')";
+                            stm.executeUpdate(query_partecipazione);
+                            JOptionPane.showMessageDialog(this,"Iscritto con successo");
+                            ProgTable2();
+
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(this,"Gia  iscritto al progetto");
+                    }
+                }catch(Exception ex){
+                    System.out.println("Error: "+ex);
                 }
-     
-            }catch(Exception ex){
-                System.out.println("Error: "+ex);
             }
         }else{
             JOptionPane.showMessageDialog(this,"Seleziona il progetto");
         }
-    }//GEN-LAST:event_Part_Pj_buttonActionPerformed
+    }//GEN-LAST:event_Stud_Part_PjActionPerformed
 
-    private void Stud_Det_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stud_Det_Pj_buttonActionPerformed
+    private void Stud_Det_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stud_Det_PjActionPerformed
         
         int row;
         
@@ -839,53 +857,92 @@ public class Menu extends javax.swing.JFrame {
         String query1;
         String query2;
         String IDprogetto = null;
+        String query_check;
+        Boolean check_partecipazione = null;
         
-        row = Prog_Tab_stud.getSelectedRow();
+        row = Stud_Prog_Tab.getSelectedRow();
+        Tipologia = Stud_Prog_Tab.getValueAt(row, 3).toString();
+        Titolo = Stud_Prog_Tab.getValueAt(row, 0).toString();
+        
         if(row!=-1){
             
-            Titolo = Prog_Tab_stud.getValueAt(row, 0).toString();
-            Descrizione = Prog_Tab_stud.getValueAt(row, 1).toString();
-            Data = Prog_Tab_stud.getValueAt(row, 2).toString();
-            Tipologia = Prog_Tab_stud.getValueAt(row, 3).toString();
-            Durata = Prog_Tab_stud.getValueAt(row, 4).toString();
-            Posti = Prog_Tab_stud.getValueAt(row, 5).toString();
-            Privacy = Prog_Tab_stud.getValueAt(row, 6).toString();
-            Tag = Prog_Tab_stud.getValueAt(row, 7).toString();
-            
-            new Dettagli_St().setVisible(true);
-            
             try{
-
+                
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
                 query1 = "SELECT IDprogetto FROM progetto WHERE titolo ='"+Titolo+"'";    
                 stm = con.prepareStatement(query1);
                 rs = stm.executeQuery(query1);
                 rs.next();
                 IDprogetto = rs.getString("IDprogetto");
-                query2 = "SELECT m.Milestone, m.Status FROM milestone AS m, task AS t WHERE (t.IDprogetto='"+IDprogetto+"' AND t.IDmilestone=m.IDmilestone)";    
-                stm=con.prepareStatement(query2);
-                rs = stm.executeQuery(query2);
+                
+                if(Tipologia.equals("Lavoro")){
+
+                    query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                    stm = con.prepareStatement(query_check);
+                    rs = stm.executeQuery(query_check);
+                    check_partecipazione = rs.next();
+
+                }else if (Tipologia.equals("Tesi")) {
+
+                    query_check = "SELECT IDtesista, IDprogetto FROM tesi WHERE IDtesista ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                    stm = con.prepareStatement(query_check);
+                    rs = stm.executeQuery(query_check);
+                    check_partecipazione = rs.next();
+
+                } else if (Tipologia.equals("Tirocinio")) {
+
+                    query_check = "SELECT IDtirocinante, IDprogetto FROM tirocinio WHERE IDtirocinante ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                    stm = con.prepareStatement(query_check);
+                    rs = stm.executeQuery(query_check);
+                    check_partecipazione = rs.next();
+
+                }
 
             }catch(Exception ex){
-                    System.out.println("Error: "+ex);
+                System.out.println(ex);
             }
             
-            Dettagli_St.CreaTask_Button.setVisible(false);
-            Dettagli_St.EliminaTask_Button.setVisible(false);
-            Dettagli_St.Titolo.setText(Titolo);
-            Dettagli_St.Descrizione.setText(Descrizione);
-            Dettagli_St.Data.setText(Data);
-            Dettagli_St.Tipologia.setText(Tipologia);
-            Dettagli_St.Durata.setText(Durata);
-            Dettagli_St.Posti.setText(Posti);
-            Dettagli_St.Privacy.setText(Privacy);
-            Dettagli_St.Tag.setText(Tag);
-            Dettagli_St.IDprogetto_hidden.setText(IDprogetto);
-            Dettagli_St.IDprogetto_hidden.setVisible(false);
-            Dettagli_St.Tasks.setModel(DbUtils.resultSetToTableModel(rs));
+            if(check_partecipazione!=false){
             
-        }
-    }//GEN-LAST:event_Stud_Det_Pj_buttonActionPerformed
+                Descrizione = Stud_Prog_Tab.getValueAt(row, 1).toString();
+                Data = Stud_Prog_Tab.getValueAt(row, 2).toString();
+                Durata = Stud_Prog_Tab.getValueAt(row, 5).toString();
+                Posti = Stud_Prog_Tab.getValueAt(row, 4).toString();
+                Privacy = Stud_Prog_Tab.getValueAt(row, 6).toString();
+                Tag = Stud_Prog_Tab.getValueAt(row, 7).toString();
+
+                new Dettagli_St().setVisible(true);
+
+                try{
+
+                    query2 = "SELECT m.Milestone, m.Status FROM milestone AS m, task AS t WHERE (t.IDprogetto='"+IDprogetto+"' AND t.IDmilestone=m.IDmilestone)";    
+                    stm=con.prepareStatement(query2);
+                    rs = stm.executeQuery(query2);
+
+                }catch(Exception ex){
+                        System.out.println("Error: "+ex);
+                }
+
+                Dettagli_St.CreaTask_Button.setVisible(false);
+                Dettagli_St.EliminaTask_Button.setVisible(false);
+                Dettagli_St.Titolo.setText(Titolo);
+                Dettagli_St.Descrizione.setText(Descrizione);
+                Dettagli_St.Data.setText(Data);
+                Dettagli_St.Tipologia.setText(Tipologia);
+                Dettagli_St.Durata.setText(Durata);
+                Dettagli_St.Posti.setText(Posti);
+                Dettagli_St.Privacy.setText(Privacy);
+                Dettagli_St.Tag.setText(Tag);
+                Dettagli_St.IDprogetto_hidden.setText(IDprogetto);
+                Dettagli_St.IDprogetto_hidden.setVisible(false);
+                Dettagli_St.Tasks.setModel(DbUtils.resultSetToTableModel(rs));
+            
+            }else{
+                JOptionPane.showMessageDialog(this,"Prima devi partecipare al progetto");
+            }
+            
+        }else{JOptionPane.showMessageDialog(this,"Seleziona il progetto");}
+    }//GEN-LAST:event_Stud_Det_PjActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         
@@ -894,7 +951,7 @@ public class Menu extends javax.swing.JFrame {
         Parent_panel.repaint();
         Parent_panel.revalidate();    }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void NPart_Ev_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NPart_Ev_buttonActionPerformed
+    private void Stud_NPart_EvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stud_NPart_EvActionPerformed
         
         int row;
         String data;
@@ -905,10 +962,10 @@ public class Menu extends javax.swing.JFrame {
         String query2;
         String query3;
         
-        row = Event_Tab_stud.getSelectedRow();
+        row = Stud_Event_Tab.getSelectedRow();
         if(row!=-1){
             
-            data = Event_Tab_stud.getValueAt(row, 0).toString(); 
+            data = Stud_Event_Tab.getValueAt(row, 0).toString(); 
             
             try{
 
@@ -940,98 +997,97 @@ public class Menu extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this,"Seleziona l'evento");
         }         
-    }//GEN-LAST:event_NPart_Ev_buttonActionPerformed
+    }//GEN-LAST:event_Stud_NPart_EvActionPerformed
 
-    private void Del_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Del_Pj_buttonActionPerformed
+    private void Prof_Del_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prof_Del_PjActionPerformed
         
         int row;
         String titolo;
         Librerie conn;
         
-        row = Prog_Tab_prof.getSelectedRow();
+        row = Prof_Prog_Tab.getSelectedRow();
         if(row!=-1){
             
-            titolo = Prog_Tab_prof.getValueAt(row, 0).toString();
+            titolo = Prof_Prog_Tab.getValueAt(row, 0).toString();
             conn = new Librerie();
             conn.del_Progetto(titolo);
             ProgTable1();
-        }
-    }//GEN-LAST:event_Del_Pj_buttonActionPerformed
+        }else{JOptionPane.showMessageDialog(this,"Seleziona il progetto");}
+    }//GEN-LAST:event_Prof_Del_PjActionPerformed
 
-    private void NPart_Pj_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NPart_Pj_buttonActionPerformed
+    private void Stud_NPart_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stud_NPart_PjActionPerformed
     
         int row;
         String Titolo;
         String Tipologia;
-        String query1;
+        String query_infoProgetto;
         String IDprogetto;
         String query_check;
-        Boolean check = null;
-        String query2;
-        String query3;
+        Boolean check_partecipazione = null;
+        String update_posti;
+        String query_Partecipazione;
         
-        row = Prog_Tab_stud.getSelectedRow();
+        row = Stud_Prog_Tab.getSelectedRow();
         if(row!=-1){
             
-            Titolo = Prog_Tab_stud.getValueAt(row, 0).toString(); 
+            Titolo = Stud_Prog_Tab.getValueAt(row, 0).toString(); 
             
             try{
 
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
-                query1 = "SELECT IDprogetto, Tipologia FROM progetto WHERE titolo ='"+Titolo+"'";    
-                stm = con.prepareStatement(query1);
-                rs = stm.executeQuery(query1);
+                query_infoProgetto = "SELECT IDprogetto, Tipologia FROM progetto WHERE titolo ='"+Titolo+"'";    
+                stm = con.prepareStatement(query_infoProgetto);
+                rs = stm.executeQuery(query_infoProgetto);
                 rs.next();
-                IDprogetto = rs.getString("IDprogetto");
-                rs.next();
+                IDprogetto = rs.getString("IDprogetto");;
                 Tipologia = rs.getString("Tipologia");
                 
-                if(Tipologia=="Lavoro"){
+                if(Tipologia.equals("Lavoro")){
                 
                     query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
                     stm = con.prepareStatement(query_check);
                     rs = stm.executeQuery(query_check);
-                    check = rs.next();
+                    check_partecipazione = rs.next();
 
-                }else if (Tipologia=="Tesi") {
+                }else if (Tipologia.equals("Tesi")) {
 
-                    query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                    query_check = "SELECT IDtesista, IDprogetto FROM tesi WHERE IDtesista ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
                     stm = con.prepareStatement(query_check);
                     rs = stm.executeQuery(query_check);
-                    check = rs.next();
+                    check_partecipazione = rs.next();
 
-                } else if (Tipologia=="Tirocinio") {
+                } else if (Tipologia.equals("Tirocinio")) {
 
-                    query_check = "SELECT IDlavoratore, IDprogetto FROM lavoro WHERE IDlavoratore ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
+                    query_check = "SELECT IDtirocinante, IDprogetto FROM tirocinio WHERE IDtirocinante ='"+IDutente_hidden.getText()+"' AND IDprogetto ='"+IDprogetto+"'";
                     stm = con.prepareStatement(query_check);
                     rs = stm.executeQuery(query_check);
-                    check = rs.next();
+                    check_partecipazione = rs.next();
 
                 }
                 
-                if(check!=false){
+                if(check_partecipazione!=false){
                     
-                    query2 = "UPDATE progetto SET posti = posti+1 WHERE IDprogetto = '"+IDprogetto+"'";
-                    stm.executeUpdate(query2);
+                    update_posti = "UPDATE progetto SET posti = posti+1 WHERE IDprogetto = '"+IDprogetto+"'";
+                    stm.executeUpdate(update_posti);
                     
-                    if(Tipologia=="Lavoro"){
+                    if(Tipologia.equals("Lavoro")){
                 
-                        query3 = "DELETE FROM lavoro WHERE IDlavoratore = '"+IDutente_hidden.getText()+"' AND IDprogetto = '"+IDprogetto+"'";
-                        stm.executeUpdate(query3);
+                        query_Partecipazione = "DELETE FROM lavoro WHERE IDlavoratore = '"+IDutente_hidden.getText()+"' AND IDprogetto = '"+IDprogetto+"'";
+                        stm.executeUpdate(query_Partecipazione);
                         JOptionPane.showMessageDialog(this,"Disiscritto con successo");
                         ProgTable2();
 
-                    }else if (Tipologia=="Tesi") {
+                    }else if (Tipologia.equals("Tesi")) {
 
-                        query3 = "DELETE FROM tesi WHERE IDtesista = '"+IDutente_hidden.getText()+"' AND IDprogetto = '"+IDprogetto+"'";
-                        stm.executeUpdate(query3);
+                        query_Partecipazione = "DELETE FROM tesi WHERE IDtesista = '"+IDutente_hidden.getText()+"' AND IDprogetto = '"+IDprogetto+"'";
+                        stm.executeUpdate(query_Partecipazione);
                         JOptionPane.showMessageDialog(this,"Disiscritto con successo");
                         ProgTable2();
 
-                    } else if (Tipologia=="Tirocinio") {
+                    } else if (Tipologia.equals("Tirocinio")) {
 
-                        query3 = "DELETE FROM tirocinio WHERE IDtirocinante = '"+IDutente_hidden.getText()+"' AND IDprogetto = '"+IDprogetto+"'";
-                        stm.executeUpdate(query3);
+                        query_Partecipazione = "DELETE FROM tirocinio WHERE IDtirocinante = '"+IDutente_hidden.getText()+"' AND IDprogetto = '"+IDprogetto+"'";
+                        stm.executeUpdate(query_Partecipazione);
                         JOptionPane.showMessageDialog(this,"Disiscritto con successo");
                         ProgTable2();
 
@@ -1047,39 +1103,39 @@ public class Menu extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this,"Seleziona il progetto");
         } 
-    }//GEN-LAST:event_NPart_Pj_buttonActionPerformed
+    }//GEN-LAST:event_Stud_NPart_PjActionPerformed
 
-    private void Del_Ev_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Del_Ev_buttonActionPerformed
+    private void Prof_Del_EvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prof_Del_EvActionPerformed
         
         int row;
         String titolo;
         Librerie conn;
         
-        row = Event_Tab_prof.getSelectedRow();
+        row = Prof_Event_Tab.getSelectedRow();
         if(row!=-1){
             
-            titolo = Event_Tab_prof.getValueAt(row, 0).toString();
+            titolo = Prof_Event_Tab.getValueAt(row, 0).toString();
             conn = new Librerie();
             conn.del_Evento(titolo);
             EventTable1();
-        }
-    }//GEN-LAST:event_Del_Ev_buttonActionPerformed
+        }else{JOptionPane.showMessageDialog(this,"Seleziona l'evento");}
+    }//GEN-LAST:event_Prof_Del_EvActionPerformed
 
-    private void Refr_Ev_button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Refr_Ev_button1ActionPerformed
+    private void Prof_Refr_EvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prof_Refr_EvActionPerformed
         EventTable1();
-    }//GEN-LAST:event_Refr_Ev_button1ActionPerformed
+    }//GEN-LAST:event_Prof_Refr_EvActionPerformed
 
-    private void Refr_Ev_button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Refr_Ev_button2ActionPerformed
+    private void Stud_Refr_EvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stud_Refr_EvActionPerformed
         EventTable2();
-    }//GEN-LAST:event_Refr_Ev_button2ActionPerformed
+    }//GEN-LAST:event_Stud_Refr_EvActionPerformed
 
-    private void Refr_Pj_button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Refr_Pj_button2ActionPerformed
+    private void Stud_Refr_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stud_Refr_PjActionPerformed
         ProgTable2();
-    }//GEN-LAST:event_Refr_Pj_button2ActionPerformed
+    }//GEN-LAST:event_Stud_Refr_PjActionPerformed
 
-    private void Refr_Pj_button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Refr_Pj_button1ActionPerformed
+    private void Prof_Refr_PjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prof_Refr_PjActionPerformed
         ProgTable1();
-    }//GEN-LAST:event_Refr_Pj_button1ActionPerformed
+    }//GEN-LAST:event_Prof_Refr_PjActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1116,33 +1172,33 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Create_Ev_button;
-    private javax.swing.JButton Create_Pj_button;
-    private javax.swing.JButton Del_Ev_button;
-    private javax.swing.JButton Del_Pj_button;
-    private javax.swing.JPanel Event_Card_prof;
-    private javax.swing.JPanel Event_Card_stud;
-    private javax.swing.JTable Event_Tab_prof;
-    private javax.swing.JTable Event_Tab_stud;
     private javax.swing.JButton Events_button;
     public static javax.swing.JLabel IDutente_hidden;
     private javax.swing.JLabel Logout_link;
-    javax.swing.JButton NPart_Ev_button;
-    private javax.swing.JButton NPart_Pj_button;
     private javax.swing.JPanel Parent_panel;
-    private javax.swing.JButton Part_Ev_button;
-    private javax.swing.JButton Part_Pj_button;
-    private javax.swing.JButton Prof_Det_Pj_button;
-    private javax.swing.JPanel Prog_Card_prof;
-    private javax.swing.JPanel Prog_Card_stud;
-    private javax.swing.JTable Prog_Tab_prof;
-    private javax.swing.JTable Prog_Tab_stud;
+    private javax.swing.JButton Prof_Create_Ev;
+    private javax.swing.JButton Prof_Create_Pj;
+    private javax.swing.JButton Prof_Del_Ev;
+    private javax.swing.JButton Prof_Del_Pj;
+    private javax.swing.JButton Prof_Det_Pj;
+    private javax.swing.JPanel Prof_Event_Card;
+    private javax.swing.JTable Prof_Event_Tab;
+    private javax.swing.JPanel Prof_Prog_Card;
+    private javax.swing.JTable Prof_Prog_Tab;
+    private javax.swing.JButton Prof_Refr_Ev;
+    private javax.swing.JButton Prof_Refr_Pj;
     private javax.swing.JButton Projects_button;
-    private javax.swing.JButton Refr_Ev_button1;
-    javax.swing.JButton Refr_Ev_button2;
-    private javax.swing.JButton Refr_Pj_button1;
-    private javax.swing.JButton Refr_Pj_button2;
-    private javax.swing.JButton Stud_Det_Pj_button;
+    private javax.swing.JButton Stud_Det_Pj;
+    private javax.swing.JPanel Stud_Event_Card;
+    private javax.swing.JTable Stud_Event_Tab;
+    javax.swing.JButton Stud_NPart_Ev;
+    private javax.swing.JButton Stud_NPart_Pj;
+    private javax.swing.JButton Stud_Part_Ev;
+    private javax.swing.JButton Stud_Part_Pj;
+    private javax.swing.JPanel Stud_Prog_Card;
+    private javax.swing.JTable Stud_Prog_Tab;
+    javax.swing.JButton Stud_Refr_Ev;
+    private javax.swing.JButton Stud_Refr_Pj;
     static javax.swing.JLabel User;
     public static javax.swing.JLabel categoria_hidden;
     private javax.swing.JPanel home;

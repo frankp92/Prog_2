@@ -59,7 +59,6 @@ public class Dettagli_St extends javax.swing.JFrame {
         CompleteTask_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setUndecorated(true);
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 153, 51));
@@ -115,6 +114,11 @@ public class Dettagli_St extends javax.swing.JFrame {
         Tag_label.setText("Tipologia");
 
         ProgressBar.setForeground(new java.awt.Color(255, 153, 51));
+        ProgressBar.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ProgressBarStateChanged(evt);
+            }
+        });
 
         GDrive_button.setText("Google Drive");
         GDrive_button.addActionListener(new java.awt.event.ActionListener() {
@@ -416,6 +420,7 @@ public class Dettagli_St extends javax.swing.JFrame {
             rs.next();
             check_utente = rs.getString("IDutente");
             System.out.println(check_utente);
+            
             if (check_utente==null){
                 
                 JOptionPane.showMessageDialog(null, "Mi dispiace, non partecipi a questo progetto", "Error", JOptionPane.ERROR_MESSAGE);
@@ -548,13 +553,58 @@ public class Dettagli_St extends javax.swing.JFrame {
                 System.out.println("Error: "+ex);
             }
         }else{
-            JOptionPane.showMessageDialog(this,"Seleziona l'evento");
+            JOptionPane.showMessageDialog(this,"Seleziona la Milestone");
         }
     }//GEN-LAST:event_JoinTask_ButtonActionPerformed
 
     private void CompleteTask_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompleteTask_ButtonActionPerformed
-        // TODO add your handling code here:
+        int row;
+        String data;
+        String query1;
+        String IDmilestone;
+        String query_check;
+        Boolean check;
+        String query2;
+        String query3;
+        
+        row = Tasks.getSelectedRow();
+        
+        if(row!=-1){
+            
+            data = Tasks.getValueAt(row, 0).toString(); 
+            
+            try{
+
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/smartlab?serverTimezone=UTC", "root", "123456");
+                query1 = "SELECT IDmilestone FROM milestone WHERE Milestone ='"+data+"'";    
+                stm = con.prepareStatement(query1);
+                rs = stm.executeQuery(query1);
+                rs.next();
+                IDmilestone = rs.getString("IDmilestone");
+                query_check = "SELECT IDmilestone, IDprogetto, IDutente FROM task WHERE IDmilestone ='"+IDmilestone+"' AND IDprogetto='"+IDprogetto_hidden.getText()+"' AND IDutente ='"+Menu.IDutente_hidden.getText()+"'";
+                stm = con.prepareStatement(query_check);
+                rs = stm.executeQuery(query_check);
+                check = rs.next();
+                
+                if(check!=false){
+                    query2 = "UPDATE task SET IDutente ='"+Menu.IDutente_hidden.getText()+"' WHERE IDmilestone ='"+IDmilestone+"' AND IDprogetto='"+IDprogetto_hidden.getText()+"'";
+                    stm.executeUpdate(query2);
+                    query3 = "UPDATE milestone SET Status ='Complete' WHERE IDmilestone ='"+IDmilestone+"'";
+                    stm.executeUpdate(query3);
+                    Task();
+                }else{JOptionPane.showMessageDialog(this,"Prima prendi in carico la milestone selezionata");}
+     
+            }catch(Exception ex){
+                System.out.println("Error: "+ex);
+            }
+        }else{
+            JOptionPane.showMessageDialog(this,"Seleziona la milestone");
+        }
     }//GEN-LAST:event_CompleteTask_ButtonActionPerformed
+
+    private void ProgressBarStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ProgressBarStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProgressBarStateChanged
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
