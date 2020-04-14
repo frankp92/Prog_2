@@ -171,7 +171,7 @@ public class Librerie {
             
         try {
             
-            query_AddMilestone = "INSERT INTO milestone (Milestone) VALUES ('"+Task+"')";
+            query_AddMilestone = "INSERT INTO milestone (Milestone, Status) VALUES ('"+Task+"', 'Non iniziata')";
             stm.executeUpdate(query_AddMilestone);
             query_IDmilestone = "SELECT IDmilestone FROM milestone WHERE Milestone ='"+Task+"'";
             rs = stm.executeQuery(query_IDmilestone);

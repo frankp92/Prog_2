@@ -8,7 +8,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.awt.Desktop;
 import java.net.URL;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.RowSorter;
 import net.proteanit.sql.DbUtils;
 
 public class Dettagli_St extends javax.swing.JFrame {
@@ -37,7 +39,6 @@ public class Dettagli_St extends javax.swing.JFrame {
         Tag_label = new javax.swing.JLabel();
         ProgressBar = new javax.swing.JProgressBar();
         GDrive_button = new javax.swing.JButton();
-        Chat_button = new javax.swing.JButton();
         Close_button = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Descrizione = new javax.swing.JTextArea();
@@ -124,13 +125,6 @@ public class Dettagli_St extends javax.swing.JFrame {
         GDrive_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GDrive_buttonActionPerformed(evt);
-            }
-        });
-
-        Chat_button.setText("Chat");
-        Chat_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Chat_buttonActionPerformed(evt);
             }
         });
 
@@ -302,7 +296,6 @@ public class Dettagli_St extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Close_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(Chat_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(GDrive_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(39, 39, 39))))
         );
@@ -361,9 +354,7 @@ public class Dettagli_St extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(GDrive_button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Chat_button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(66, 66, 66)
                         .addComponent(Close_button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
         );
@@ -374,6 +365,14 @@ public class Dettagli_St extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ProgressBar(){
+    
+        ProgressBar.setMinimum(0);
+        ProgressBar.setMaximum(Tasks.getRowCount());
+        ProgressBar.setValue(1);
+    
+    }
+    
     private String check_partecipante(String IDutente){
     
         String query1;
@@ -453,10 +452,6 @@ public class Dettagli_St extends javax.swing.JFrame {
             System.out.println("Error: "+ex);
         }
     }
-    private void Chat_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chat_buttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Chat_buttonActionPerformed
-
     private void EliminaTask_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaTask_ButtonActionPerformed
         
         int row;
@@ -502,6 +497,20 @@ public class Dettagli_St extends javax.swing.JFrame {
 
     private void AggiornaTask_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AggiornaTask_ButtonActionPerformed
         Task();
+        int Count_Complete = 0;
+        ProgressBar.setMinimum(0);
+        ProgressBar.setMaximum(Tasks.getRowCount());
+        
+        for(int i = 0; i<Tasks.getRowCount(); i++){
+            
+            if (Tasks.getValueAt(i,1).toString().equals("Complete")) {
+                
+                Count_Complete+=1;
+                
+            }
+        }
+        
+        ProgressBar.setValue(Count_Complete);
     }//GEN-LAST:event_AggiornaTask_ButtonActionPerformed
 
     private void CreaTask_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreaTask_ButtonActionPerformed
@@ -603,7 +612,10 @@ public class Dettagli_St extends javax.swing.JFrame {
     }//GEN-LAST:event_CompleteTask_ButtonActionPerformed
 
     private void ProgressBarStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ProgressBarStateChanged
-        // TODO add your handling code here:
+        
+        
+        
+        
     }//GEN-LAST:event_ProgressBarStateChanged
 
     public static void main(String args[]) {
@@ -634,13 +646,13 @@ public class Dettagli_St extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Dettagli_St().setVisible(true);
+                //ProgressBar();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AggiornaTask_Button;
-    private javax.swing.JButton Chat_button;
     private javax.swing.JButton Close_button;
     public static javax.swing.JButton CompleteTask_Button;
     public static javax.swing.JButton CreaTask_Button;
