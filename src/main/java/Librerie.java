@@ -1,11 +1,11 @@
 /*
 Sono presenti i seguenti metodi:
 -   Librerie: connessione al DB
--   login: Query per effettuare il login che prende in input l'email e la pwd
--   register_stud: Query per la registrazione di uno studente, prende in input l'array contenente le info necessarie
--   register_prof: Query per la registrazione di uno professore, prende in input l'array contenente le info necessarie
--   crea_Progetto: Query per la creazione di un progetto, prende in input l'array contenente le info del progetto e l'ID del docente che l'ha creato
--   crea_Evento: Query per la creazione di un evento, prende in input l'array contenente le info del progetto e l'ID del docente che l'ha creato
+-   User_Login: Query per effettuare il User_Login che prende in input l'email e la pwd
+-   User_Stud_Register: Query per la registrazione di uno studente, prende in input l'array contenente le info necessarie
+-   User_Prof_Register: Query per la registrazione di uno professore, prende in input l'array contenente le info necessarie
+-   Pj_New: Query per la creazione di un progetto, prende in input l'array contenente le info del progetto e l'ID del docente che l'ha creato
+-   Ev_New: Query per la creazione di un evento, prende in input l'array contenente le info del progetto e l'ID del docente che l'ha creato
 
  */
 
@@ -36,7 +36,7 @@ public class Librerie {
         }
     }
      
-    public String[] login(String email, String pass){
+    public String[] User_Login(String email, String pass){
 
         String query_Login;
         String IDutente;
@@ -64,7 +64,7 @@ public class Librerie {
         return Utente;
     }
     
-    public void register_stud(String Utente[]){
+    public void User_Stud_Register(String Utente[]){
         
         String query_AddUtente;
         String query_IDutente;
@@ -88,7 +88,7 @@ public class Librerie {
         }
     }
      
-    public void register_prof(String Utente[]){
+    public void User_Prof_Register(String Utente[]){
         
         String query_AddUtente;
         String query_IDutente;
@@ -112,7 +112,7 @@ public class Librerie {
         }  
     }
     
-    public void crea_Progetto(String Progetto[], String IDds){
+    public void Pj_New(String Progetto[], String IDds){
         
         String query_AddProgetto;
         String query_IDprogetto;
@@ -148,7 +148,7 @@ public class Librerie {
         }
     }
     
-    public void Update_Prog_GDriveFolderID(String FolderID, String Titolo){
+    public void Pj_GDriveFolderID(String FolderID, String Titolo){
         
         String query_AddIDGDrive;
         
@@ -162,7 +162,7 @@ public class Librerie {
         }
     }
     
-    public void Add_Task(String Task, String IDprogetto){
+    public void Milestone_New(String Task, String IDprogetto){
     
         String query_AddMilestone;
         String query_IDmilestone;
@@ -185,7 +185,7 @@ public class Librerie {
         }
     }
     
-    public void Del_Task(String Task, String IDprogetto){
+    public void Milestone_Del(String Task, String IDprogetto){
     
         String query_IDmilestone;
         String query_DeleteTask;
@@ -208,7 +208,7 @@ public class Librerie {
         }
     }
     
-    public void del_Progetto(String Titolo){
+    public void Pj_Del(String Titolo){
         
         String query_infoProgetto;
         String query_IDareatematica;
@@ -269,7 +269,7 @@ public class Librerie {
         }
     }
      
-    public void crea_Evento(String Evento[], String IDds){    
+    public void Ev_New(String Evento[], String IDds){    
         
         String query1;
         String query2;
@@ -305,7 +305,7 @@ public class Librerie {
         }
     }
     
-    public void del_Evento(String titolo){
+    public void Ev_Del(String titolo){
         
         String query_Titolo;
         String query_IDareatematica;
